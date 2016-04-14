@@ -1,0 +1,19 @@
+/* font */
+/* http://advancedsass.com/articles/dynamically-import-only-used-google-webfonts.html */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,700,700italic);
+@mixin font($family, $weight: 400, $style: normal) {
+  font-family: $family;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+/* font size */
+@function calculateRem($size) {
+	/* The browser by default sets the font-size at the root to 16px */
+  	$remSize: $size / 16px;
+  	@return $remSize * 1rem;
+}
+@mixin font-size($size) {
+  	font-size: $size;
+  	font-size: calculateRem($size);
+}

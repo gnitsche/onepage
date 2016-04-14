@@ -1,0 +1,14 @@
+/* border */
+@mixin set-border($position, $strength, $type, $color, $opacity: false) {
+	
+	@if ($position == all) { 
+		border: $strength $type $color;
+	} @else {
+		border-#{$position}: $strength $type $color;
+	}
+
+	@if ($opacity != false) {
+		border-color: rgba($color, $opacity);
+	}
+	background-clip: content-box; // background color not added to border color
+}

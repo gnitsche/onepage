@@ -1,0 +1,30 @@
+/* background color incl automatic font color */
+@function set-color($color) {
+    @if (lightness( $color ) > 50) {
+      //@return #000000; // Lighter color, return black
+      @return darken($color, 40%)
+    }
+    @else {
+      //@return #FFFFFF; // Darker color, return white
+      @return lighten($color, 40%)
+    }
+}
+@mixin set-background($bgcolor, $opacity: false) {
+	/* include transparency - example: 0.5 */
+	@if ($opacity != false) {
+		background: rgba($bgcolor, $opacity);
+	} @else {
+		background: $bgcolor;
+	}
+    color: set-color($bgcolor);
+}
+
+
+/* fullscreen background image */
+@mixin set-background-image($bgimage) {
+	position: relative;
+    height: 100%;
+    display: block;
+    background: url($bgimage) no-repeat center center;
+    background-size: cover;
+}

@@ -1,0 +1,23 @@
+@mixin font-loader($fontName, $urlWithoutFileExtension, $font-weight, $font-style: normal){
+    // see https://css-tricks.com/snippets/css/using-font-face/
+    @font-face {
+        font-family: $fontName;
+        src: url("#{$urlWithoutFileExtension}.eot"); // IE9 Compat Modes
+        src: url("#{$urlWithoutFileExtension}.eot?#iefix") format("embedded-opentype"), // IE6-IE8
+             url("#{$urlWithoutFileExtension}.woff2") format("woff2"), // Awesome Modern Browsers
+             url("#{$urlWithoutFileExtension}.woff") format("woff"), // Pretty Modern Browsers
+             url("#{$urlWithoutFileExtension}.ttf") format("truetype"), // Safari, Android, iOS
+             url("#{$urlWithoutFileExtension}.svg##{$fontName}") format("svg"); // Legacy iOS
+        font-weight: $font-weight;
+        font-style: $font-style;
+    }
+}
+
+/* example: 
+@include font-loader("functionpro", "FunctionPro-CondensedBold-webfont", 700, normal);
+@include font-loader("functionpro", "FunctionPro-CondensedLight-webfont", 300, normal);
+*/
+
+/* Better USE SVG 
+https://css-tricks.com/icon-fonts-vs-svg/
+*/

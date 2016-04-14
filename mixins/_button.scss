@@ -1,0 +1,24 @@
+/* button circular */
+@mixin btn-circular($btnsize, $btnimage: false, $btncolor: false, $btnbordersize: false) {
+	@if ($btncolor != false) {
+		@include set-background($btncolor);
+	} @else {
+		@include set-background(#ffffff);
+	}
+	@if ($btnimage != false) {
+    	background: url($btnimage) no-repeat center center;
+		background-size: cover;
+	}
+	@if ($btnbordersize != false) {
+		border: $btnbordersize solid black;
+	} @else {
+		border: $btnsize/50 solid black; // example: 100px/50 = 2px - also for vw
+	}
+	display: block;
+	overflow: hidden;
+	text-align:center;	
+	border-radius: 50%;
+	width: $btnsize;
+	height: $btnsize;
+	line-height: $btnsize;
+}

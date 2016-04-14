@@ -1,0 +1,220 @@
+@import "zen-grids";
+$zen-columns: 6; // Set the total number of columns in the grid.
+$zen-gutters: 20px;
+/* HOWTO
+@include zen-grid-item(2, 1, right); // breite, position, ggf. ausrichtung
+@include zen-new-row(left); // zusätzliche floateigenschaft
+*/
+
+/* reset *******************/
+@import "extends/reset";
+
+/* extends *******************/
+@import "extends/showgrid";
+@import "extends/resetlist";
+@import "extends/center";
+
+/* mixins *******************/
+@import "mixins/font";
+@import "mixins/background";
+@import "mixins/border";
+@import "mixins/button";
+
+@import "mixins/breakpoints";
+$mobile: 320px;
+$tablet: 768px;
+$desktop: 960px;
+
+/* page *******************/
+
+section {
+  max-width: 1000px;
+  @extend .center-h;
+}
+section, header, article, footer, div {
+  @extend .showgrid;
+}
+
+/* block 1 ******/
+#header-welcome {
+  @include set-background-image('demo.jpg');
+	.header-text {
+		@include zen-grid-item(6, 1);
+		@include font-size(21px);
+		h1 {
+			color: red;
+			@include font("Open Sans", 300, 700);
+		}
+	}
+}
+/* block 2 ******/
+#person {
+		.person-image {
+
+	  		@include zen-grid-item(2, 1);
+        @include breakpoint($tablet) {
+            @include zen-grid-item(6, 1);
+        }
+			b {
+				@include font("Open Sans", 700);
+			}
+		}
+		.person-text {
+
+			@include zen-grid-item(4, 3);
+      @include breakpoint($tablet) {
+          @include zen-new-row(both);
+          @include zen-grid-item(6, 1);
+      }
+			b {
+				@include font("Open Sans", 400, italic);
+			}
+		}
+}
+/* block 3 ******/
+// special //
+#drei {
+  @include zen-new-row(both);
+	header {
+	//@include set-background-image('demo.jpg');
+		.header-text {
+	  	@include zen-grid-item(6, 1);
+		}
+	}
+	section {
+    @include zen-new-row(both);
+		.first {
+      @include zen-grid-item(3, 1);
+			b {}
+		}
+		.second {
+	     @include zen-grid-item(3, 4);
+			  b {}
+		}
+	}
+}
+#vier {
+@include zen-new-row(both);
+	.first {
+	@include zen-grid-item(2, 1);
+		b {}
+	}
+	.second {
+	@include zen-grid-item(4, 3);
+		b {}
+	}
+}
+// special //
+
+/* block 4 ******/
+#favorite-topitem {
+	@include set-background-image('demoxx.jpg');
+	header {
+    @include zen-new-row(both);
+		@include zen-grid-item(6, 1);
+	}
+}
+/* block 5 ******/
+#favorite-items {
+	#news {
+		.news-a {
+      @include zen-new-row(both);
+	    @include zen-grid-item(3, 1);
+			b {}
+		}
+		.news-b {
+			@include zen-grid-item(3, 4);
+			b {}
+		}
+	}
+
+	#projects {
+    .project-a, .project-b, .project-c {
+      height: 20vw;
+      &:first-child {
+        @include zen-new-row(both);
+      }
+      b {
+        @extend .center-h;
+      }
+    }
+		.project-a {
+	  	@include zen-grid-item(2, 1);
+			b {
+				@include btn-circular(20vw, 'demoxx.jpg', #A6A2A2, false); // size, image, color, border
+			}
+		}
+		.project-b {
+			@include zen-grid-item(2, 3);
+      @extend .center-v;
+			b {
+				@include btn-circular(10vw, 'demoxx.jpg', #A6A2A2, false); // size, image, color, border
+			}
+		}
+		.project-c {
+			@include zen-grid-item(2, 5);
+			b {
+				@include btn-circular(10vw, 'demoxx.jpg', #A6A2A2, false); // size, image, color, border
+			}
+		}
+	}
+}
+/* block 6 ******/
+#form {
+  @include zen-new-row(both);
+
+  .form-part-a {
+      @include zen-new-row(both);
+			@include zen-grid-item(3, 1);
+			b {}
+		}
+	.form-part-b {
+			@include zen-grid-item(3, 4);
+			b {}
+	}
+}
+footer div {
+@include zen-new-row(both);
+	@include zen-grid-item(6, 1);
+	@include set-background(#2E2E2E);
+	i {}
+}
+
+/* menu ******/
+nav {
+	#btn-navigation {
+		display: block;
+		position:fixed;
+		bottom: 10px;
+		left: calc(50% - 20px);
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		text-align:center;
+		@include set-background(#2E2E2E);
+	}
+	ul {
+		z-index:2;
+		@extend .resetlist;
+		display: none; //block
+		@include set-background(#2E2E2E, 0.85);
+		position:fixed;
+		bottom: 60px;
+		left: 10px;
+		width: calc(100% - 20px);
+		> li {
+			text-align: right;
+			margin: 10px;
+			padding: 10px;
+			@include set-border(bottom, 1px, solid, #ffffff, 0.5);
+			a {
+				@include font("Open Sans", 700);
+				@include font-size(21px);
+				color: #ffffff;
+			}
+			&:last-child {
+				border: none;
+			}
+		}
+	}
+}

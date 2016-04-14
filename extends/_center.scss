@@ -1,0 +1,10 @@
+.center-h {
+  // on the element
+  margin: 0 auto;
+}
+
+.center-v {
+  // on the parent element
+  display: flex;
+  align-items: center;
+}
