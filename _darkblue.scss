@@ -1,0 +1,39 @@
+// font
+// @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic);
+
+@include font-loader("texgyreadventorregular", "theme/darkblue/fonts/texgyreadventor-regular-webfont", 400, normal);
+@include font-loader("texgyreadventorbold", "theme/darkblue/fonts/texgyreadventor-bold-webfont", 700, normal);
+
+$font-weight-thin: 400;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+// traditional scale (6, 7, 8, 9, 10, 11, 12, 14, 16, 18, 21, 24, 36, 48, 60, 72)
+$font-size-headline-large: 48px;
+$font-size-headline: 36px;
+$font-size-headline-small: 24px;
+$font-size-teaser: 18px;
+$font-size-text: 14px;
+
+// colors
+$color: #00b9c4; // blue
+$color-gray: #262c35; // default gray
+
+$color-white: #ffffff;
+$color-black: #000000;
+
+$color-gray-light-xxx: mix($color-white, $color-gray, 85%);
+$color-gray-light-xx: mix($color-white, $color-gray, 50%);
+$color-gray-light-x: mix($color-white, $color-gray, 30%);
+$color-gray-light: mix($color-white, $color-gray, 10%);
+$color-gray-dark: mix($color-black, $color-gray, 10%);
+$color-gray-dark-x: mix($color-black, $color-gray, 20%);
+$color-gray-dark-xx: mix($color-black, $color-gray, 30%);
+$color-gray-dark-xxx: mix($color-black, $color-gray, 50%);
+
+$color-dark: mix($color-black, $color, 30%);
+
+// special colors:
+$color-error: #ff5f63; // red
+$color-success: #83c46f; // green
+$color-info: #e4965e; // yellow

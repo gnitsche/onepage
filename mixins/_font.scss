@@ -1,19 +1,25 @@
 /* font */
-/* http://advancedsass.com/articles/dynamically-import-only-used-google-webfonts.html */
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,700,700italic);
-@mixin font($family, $weight: 400, $style: normal) {
-  font-family: $family;
-  font-weight: $weight;
+// load Font incl. variables in theme
+@mixin font($family, $weight: $font-weight-normal, $style: normal) {
+  font-family: $family, Helvetica, sans-serif;
+  font-weight: $font-weight-normal;
   font-style: $style;
 }
 
 /* font size */
+// Example: @include font-size($font-size-headline); // default line-height
+// Example: @include font-size($font-size-headline, $font-size-headline-big); // another line-height
+// Example: @include font-size($font-size-headline, false); // no line-height
 @function calculateRem($size) {
 	/* The browser by default sets the font-size at the root to 16px */
   	$remSize: $size / 16px;
   	@return $remSize * 1rem;
 }
-@mixin font-size($size) {
-  	font-size: $size;
-  	font-size: calculateRem($size);
+@mixin font-size($size: 16px, $size-line-height: $size) {
+	font-size: $size;
+  font-size: calculateRem($size);
+  @if ($size-line-height != false) {
+    line-height: $size-line-height * 1.48;
+    line-height: calculateRem($size-line-height * 1.48);
+  }
 }

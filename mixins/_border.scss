@@ -1,7 +1,7 @@
 /* border */
-@mixin set-border($position, $strength, $type, $color, $opacity: false) {
-	
-	@if ($position == all) { 
+@mixin set-border($position, $strength: 1, $type: solid, $color: $color-gray, $opacity: false) {
+
+	@if ($position == all) {
 		border: $strength $type $color;
 	} @else {
 		border-#{$position}: $strength $type $color;
@@ -12,3 +12,8 @@
 	}
 	background-clip: content-box; // background color not added to border color
 }
+
+
+// Example:
+// @include set-border(bottom, 1px, solid, #ffffff, 0.5);
+// @include set-border(all, 3px, solid, $color-black);

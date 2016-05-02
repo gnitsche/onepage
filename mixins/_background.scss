@@ -1,30 +1,29 @@
 /* background color incl automatic font color */
 @function set-color($color) {
-    @if (lightness( $color ) > 50) {
+    @if (lightness($color) > 50) {
       //@return #000000; // Lighter color, return black
-      @return darken($color, 40%)
+      @return darken($color, 40%);
     }
     @else {
       //@return #FFFFFF; // Darker color, return white
-      @return lighten($color, 40%)
+      @return lighten($color, 40%);
     }
 }
-@mixin set-background($bgcolor, $opacity: false) {
+@mixin set-background($bg-color, $bg-opacity: false) {
 	/* include transparency - example: 0.5 */
-	@if ($opacity != false) {
-		background: rgba($bgcolor, $opacity);
+	@if ($bg-opacity != false) {
+		background: rgba($bg-color, $bg-opacity);
 	} @else {
-		background: $bgcolor;
+		background: $bg-color;
 	}
-    color: set-color($bgcolor);
+    color: set-color($bg-color);
 }
 
 
 /* fullscreen background image */
-@mixin set-background-image($bgimage) {
+@mixin set-background-image($bg-image) {
 	position: relative;
     height: 100%;
-    display: block;
-    background: url($bgimage) no-repeat center center;
+    background: url($bg-image) no-repeat center center;
     background-size: cover;
 }

@@ -1,0 +1,46 @@
+/* mixins for margin and padding in REM */
+// thanks to: http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+
+@function parseInt($n) {
+  @return $n / ($n * 0 + 1);
+}
+
+@mixin rem($property, $values) {
+  $px : ();
+  $rem: ();
+
+  @each $value in $values {
+
+    @if $value == 0 or $value == auto {
+      $px : append($px , $value);
+      $rem: append($rem, $value);
+    }
+
+    @else {
+      $unit: unit($value);
+      $val: parseInt($value);
+
+      @if $unit == "px" {
+        $px : append($px,  $value);
+        $rem: append($rem, ($val / 16 + rem));
+        // changes:
+        // html default font size = 100% 
+        // and the devider = 16
+      }
+
+      @if $unit == "rem" {
+        $px : append($px,  ($val * 16 + px));
+        $rem: append($rem, $value);
+      }
+    }
+  }
+
+  @if $px == $rem {
+    #{$property}: $px;
+  } @else {
+    #{$property}: $px;
+    #{$property}: $rem;
+  }
+}
+
+// example: @include rem(padding, 20px 10px);

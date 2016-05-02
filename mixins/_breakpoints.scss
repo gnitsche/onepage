@@ -1,17 +1,13 @@
-/*
-$mobile: 320px;
-$tablet: 768px;
-$desktop: 960px;
-*/
-@mixin breakpoint($breakpoint-size) {
-  @media all and (max-width: $breakpoint-size) { // max-width
-    @content;
-  }
-}
+//base font
+$bf: 16;
 
-/*
-USE:
-@include breakpoint($mobile) {
-    // styles
+@function calculateRem($size) {
+	/* The browser by default sets the font-size at the root to 16px */
+  	$remSize: $size / 16px;
+  	@return $remSize * 1rem;
 }
-*/
+@mixin breakpoint($size, $min-max: min-width) {
+  $rem: calculateRem($size);
+  @media(#{$min-max}: #{$rem}) { @content; }
+}
+// @include breakpoint(600px) {}

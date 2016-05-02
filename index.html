@@ -2,48 +2,50 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>onepage - 01b</title>
+<title>onepage</title>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
 <meta name="viewport" content="user-scalable=0, initial-scale=1.0"/>
-<link href="style.css" rel="stylesheet" type="text/css">
+<link href="style.css" rel="stylesheet">
 </head>
 
 <body>
 <!-- block 1 -->
 <header id="header-welcome">
-  <div class="header-text"><h1>Test2</h1></div>
+  <div class="header-text"><h1>Welcome</h1></div>
 </header>
 <!-- block 2 -->
-<section id="person">
+<div id="page">
+<section id="person" class="block">
   <div class="person-image"><b>Image 1/4</b></div>
-  <div class="person-text"><b>Text 3/4</b></div>
+  <div class="person-text"><h2>Text 3/4</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. </p></div>
 </section>
 <!-- block 3 -->
 <!-- special -->
-<section id="drei">
+<section id="drei" class="block">
   <header>
-    <div class="header-text"><h2>Test2</h2></div>
+    <div class="header-bg"></div>
+    <h2>Test2</h2>
   </header>
   <section>
-    <div class="first">(special) <b>1/2</b></div>
-    <div class="second">(special) <b>2/2</b></div>
+    <div class="first"><h3>(special) 1/2</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.</p></div>
+    <div class="second"><h3>(special) 2/2</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.</p></div>
   </section>
 </section>
 <section id="vier">
-  <div class="first">(special) <b>1/4</b></div>
-  <div class="second">(special) <b>3/4</b></div>
+  <div class="first"><h3>(special) 1/4</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p></div>
+  <div class="second"><h3>(special) 3/4</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.</p></div>
 </section>
 <!-- special -->
 <!-- block 4 -->
-<section id="favorite-topitem">
+<section id="favorite-topitem" class="block">
   <header><h2>Bezeichner Block 4</h2>1/1 (komplett)</header>
 </section>
 <!-- block 5 -->
-<section id="favorite-items">
+<section id="favorite-items" class="block">
   <section id="news">
-    <article class="news-a"><b>News 1/2</b></article>
-    <div class="news-b"><b>News 2/2</b></div>
+    <article class="news-a"><h3>(news) 1/2</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p></article>
+    <div class="news-b"><h3>(news) 2/2</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p></div>
   </section>
   <section id="projects">
     <div class="project-a"><b>1/3</b></div>
@@ -52,25 +54,67 @@
   </section>
 </section>
 <!-- block 6 -->
-<section id="form">
-  <div class="form-part-a"><b>Form 1/2</b></div>
-  <div class="form-part-b"><b>Form 2/2</b></div>
+<section id="contact" class="block">
+  <form action="" method="">
+    <fieldset>
+      <legend id="form-legend"><h2>Kontakt</h2></legend>
+      <div id="form-firstname">
+        <label><b>First name:</b></label>
+        <input type="text" name="firstname" maxlength="100" placeholder="Vorname" required>
+      </div>
+      <div id="form-lastname">
+        <label><b>Last name:</b></label>
+        <input type="text" name="lastname" maxlength="100" placeholder="Nachname" required>
+      </div>
+      <div id="form-email">
+        <label><b>eMail:</b></label>
+        <input type="email" name="email" maxlength="200" placeholder="eMail" required>
+      </div>
+      <div id="form-web">
+        <label><b>Website:</b></label>
+        <input type="text" name="website" value="http://" maxlength="300" placeholder="website">
+      </div>
+      <div id="form-text">
+        <label><b>Text:</b></label>
+        <textarea rows="10" name="usrtxt" wrap="hard" maxlength="800" placeholder="freies Textfeld" required></textarea>
+        <input type="submit" value="Submit" maxlength="500" id="form-submit">
+      </div>
+    </fieldset>
+  </form>
 </section>
-<footer id="footer">
-  <div><i>1/1 (Footer Information)</i></div>
+</div>
+<footer id="footer" class="block">
+  <div><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.</p></div>
 </footer>
 
-<nav>
-	<section id="btn-navigation">X</section>
-	<ul>
-    	<li><a href="#header">Menu 1</a></li>
-        <li><a href="#person">Menu 2</a></li>
+<nav id="navigation">
+	<div id="navigation-btn">Menu</div>
+	<ul id="navigation-menu">
+    	<li><a href="#header-welcome">Willkommen</a></li>
+        <li><a href="#person">Person</a></li>
         <li><a href="#drei">Menu 3</a></li>
         <li><a href="#favorite-topitem">Menu 4</a></li>
         <li><a href="#favorite-items">Menu 5</a></li>
-        <li><a href="#form">Menu 6</a></li>
+        <li><a href="#contact">Kontakt</a></li>
     </ul>
 </nav>
+
+<script src="js/jquery-2.2.3.min-pack.js"></script>
+<script>
+/* form input error text */
+var errortext = "Bitte richtig ausfüllen!";
+
+/* parallax */
+$(window).scroll(function(e){
+  parallax();
+});
+function parallax(){
+  var scrolled = $(window).scrollTop();
+  $('#drei header .header-bg').css('top',-(scrolled*0.2)+'px');
+}
+</script>
+<script src="js/form-validation.js"></script>
+<script src="js/navigation.js"></script>
 
 </body>
 </html>
