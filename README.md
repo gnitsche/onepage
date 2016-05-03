@@ -1,14 +1,21 @@
 # "ONEPAGE"
-### The responsive singe page
+### The responsive single page
 
 My version of a lightweight single page written in SASS. It is free to use. The page is perfect to represent you - with its form field, "about you" part, "your projects" ... 
+
+##### Features:
+- responsive
+- parallax effect on image
+- js form validation
+- handy bottom menu
 
 :warning: __Status__: In development!
 
 
-## My intention
+### My intention
 
 > I want a simple responsive fast loading HTML page.
+> You can navigate mobile with only one hand!
 
 ### Solution 
 
@@ -28,4 +35,3 @@ My version of a lightweight single page written in SASS. It is free to use. The 
 ### Solve bugs
 
 1. JS: Menu button fade In/Out bug in combination with scrolling in Firefox
-
