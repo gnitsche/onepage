@@ -14,8 +14,8 @@ My version of a lightweight single page written in SASS. It is free to use. The 
 
 ### My intention
 
-> I want a simple responsive fast loading HTML page.
-> You can navigate mobile with only one hand!
+> I want a simple responsive fast loading HTML page.<br />
+> On mobile phones you can navigate with only one hand!
 
 ### Solution 
 
