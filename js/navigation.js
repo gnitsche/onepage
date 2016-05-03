@@ -1,12 +1,12 @@
 // Fade Menu Button
 function scrollMenu() {
-  $('#navigation').fadeOut();
   var scrollpage = $('body').scrollTop();
   setTimeout(function(){
       if($('body').scrollTop() == scrollpage){
-          $('#navigation').fadeIn();
+          $('#navigation').delay(1).fadeIn();
       }
   }, 800);
+  $('#navigation').delay(1).fadeOut();
 }
 
 $(document).scroll(function(){

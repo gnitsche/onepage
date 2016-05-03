@@ -160,7 +160,14 @@ https://css-tricks.com/icon-fonts-vs-svg/
   font-weight: 700;
   font-style: normal; }
 /*
-
+$color-gray-light-xxx
+$color-gray-light-xx
+$color-gray-light-x
+$color-gray-light
+$color-gray-dark
+$color-gray-dark-x
+$color-gray-dark-xx
+$color-gray-dark-xxx
 
 $font-size-headline-large
 $font-size-headline
@@ -726,16 +733,23 @@ p, i {
         border-radius: 50%;
         width: 15vw;
         height: 15vw; } }
-  #person .person-text h2 {
-    font-size: 48px;
-    font-size: 3rem;
-    line-height: 71.04px;
-    line-height: 4.44rem; }
-  #person .person-text p {
-    font-size: 18px;
-    font-size: 1.125rem;
-    line-height: 26.64px;
-    line-height: 1.665rem; }
+  #person .person-text {
+    text-align: center; }
+    @media (min-width: 40.0625rem) {
+      #person .person-text {
+        text-align: left; } }
+    #person .person-text h2 {
+      font-size: 48px;
+      font-size: 3rem;
+      line-height: 71.04px;
+      line-height: 4.44rem;
+      border-bottom: 1px solid #3b4149;
+      background-clip: content-box; }
+    #person .person-text p {
+      font-size: 18px;
+      font-size: 1.125rem;
+      line-height: 26.64px;
+      line-height: 1.665rem; }
 
 /* block 3 ******/
 #drei header {
@@ -753,8 +767,13 @@ p, i {
     height: 500px; }
   #drei header h2 {
     position: absolute;
-    top: 50px;
-    left: 10px; }
+    top: 20px;
+    left: 0;
+    padding: 0 10px 5px 10px;
+    padding: 0 0.625rem 0.3125rem 0.625rem;
+    /* include transparency - example: 0.5 */
+    background: #22272f;
+    color: #7c8aa1; }
 #drei section {
   border-bottom: 1px solid #3b4149;
   background-clip: content-box; }
@@ -971,18 +990,18 @@ p, i {
   border: none;
   cursor: pointer; }
 
-footer div {
+footer {
   /* include transparency - example: 0.5 */
   background: #13161a;
   color: #697a90;
   padding: 10px;
   padding: 0.625rem; }
   @media (min-width: 40.0625rem) {
-    footer div {
+    footer {
       padding: 20px 40px;
       padding: 1.25rem 2.5rem;
       text-align: center; } }
-  footer div p {
+  footer p {
     color: #676b71; }
 
 /* menu ******/
@@ -1020,15 +1039,13 @@ footer div {
   width: calc(100% - 1.25rem); }
   @media (min-width: 40.0625rem) {
     #navigation #navigation-menu {
-      width: 80%;
-      left: 10%; } }
-  @media (min-width: 60.0625rem) {
-    #navigation #navigation-menu {
       width: 50%;
       left: 25%; } }
+  @media (min-width: 60.0625rem) {
+    #navigation #navigation-menu {
+      width: 30%;
+      left: 35%; } }
   #navigation #navigation-menu > li {
-    padding: 3px 10px 5px 10px;
-    padding: 0.1875rem 0.625rem 0.3125rem 0.625rem;
     border-bottom: 1px solid #ffffff;
     border-color: rgba(255, 255, 255, 0.2);
     background-clip: content-box;
@@ -1052,6 +1069,16 @@ footer div {
         line-height: 53.28px;
         line-height: 3.33rem; } }
     #navigation #navigation-menu > li a {
-      color: #ffffff; }
+      padding: 3px 10px 5px 10px;
+      padding: 0.1875rem 0.625rem 0.3125rem 0.625rem;
+      color: #dedfe0;
+      width: 100%;
+      cursor: pointer;
+      display: block; }
+      #navigation #navigation-menu > li a:hover {
+        /* include transparency - example: 0.5 */
+        background: #1e232a;
+        color: #77879d;
+        color: #ffffff; }
     #navigation #navigation-menu > li:last-child {
       border: none; }

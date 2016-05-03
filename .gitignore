@@ -2,7 +2,8 @@
 *.psd
 _work/
 _backup/
-index.html~
+*~
 .htaccess
+.gitignore
 sitemap.xml
 sitemap.xml.gz

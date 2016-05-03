@@ -28,8 +28,16 @@ $zen-gutters: 20px;
 /* theme "darkblue" *******************/
 $theme: "darkblue";
 @import "darkblue";
-/*
 
+/*
+$color-gray-light-xxx
+$color-gray-light-xx
+$color-gray-light-x
+$color-gray-light
+$color-gray-dark
+$color-gray-dark-x
+$color-gray-dark-xx
+$color-gray-dark-xxx
 
 $font-size-headline-large
 $font-size-headline
@@ -245,8 +253,13 @@ p, i {
       }
 
 		.person-text {
+      text-align: center;
+      @include breakpoint($device-medium) {
+        text-align: left;
+      }
       h2 {
         @include font-size($font-size-headline-large);
+        @include set-border(bottom, 1px, solid, $color-gray-light);
       }
       p {
         @include font-size($font-size-teaser);
@@ -270,8 +283,10 @@ p, i {
     }
     h2 {
       position: absolute;
-      top: 50px;
-      left: 10px;
+      top: 20px;
+      left: 0;
+      @include rem("padding", 0 10px 5px 10px);
+      @include set-background($color-gray-dark);
     }
 	}
 	section {
@@ -422,7 +437,7 @@ p, i {
   }
 
 }
-footer div {
+footer {
 	@include set-background($color-gray-dark-xxx);
   @include rem("padding", 10px);
   @include breakpoint($device-medium) {
@@ -462,18 +477,16 @@ footer div {
     @include rem("bottom", 80px);
     @include rem("left", 10px);
 		width: calc(100% - 20px);
-    width: calc(100% - 1.25rem); // 20px / 16
+    width: calc(100% - 1.25rem); // 20px / 16 = rem
     @include breakpoint($device-medium) {
-      width: 80%;
-      left: 10%;
-    }
-    @include breakpoint($device-large) {
       width: 50%;
       left: 25%;
     }
+    @include breakpoint($device-large) {
+      width: 30%;
+      left: 35%;
+    }
 		> li {
-
-      @include rem("padding", 3px 10px 5px 10px);
 			@include set-border(bottom, 1px, solid, #ffffff, 0.2);
       @include font("texgyreadventorbold", $font-weight-normal);
 
@@ -488,7 +501,15 @@ footer div {
       }
       */
 			a {
-				color: #ffffff;
+        @include rem("padding", 3px 10px 5px 10px);
+        color: $color-gray-light-xxx;
+        width: 100%;
+        cursor: pointer;
+        display: block;
+        &:hover {
+          @include set-background($color-gray-dark-x);
+          color: $color-white;
+        }
 			}
 			&:last-child {
 				border: none;
