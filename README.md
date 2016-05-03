@@ -6,9 +6,10 @@ The page is perfect for representing (including a form field, "about you" part, 
 
 ##### Features:
 - responsive
-- parallax effect on image
-- js form validation
 - handy bottom menu
+- changeable themes
+- js form validation
+- parallax effect on image
 
 :warning: __Status__: In development!
 
@@ -33,6 +34,3 @@ The page is perfect for representing (including a form field, "about you" part, 
 	* js (TODO)
 	
 	
-##### Solve bugs
-
-1. JS: Menu button fade In/Out bug in combination with scrolling in Firefox
