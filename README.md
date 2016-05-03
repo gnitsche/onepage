@@ -1,7 +1,8 @@
 # "ONEPAGE"
 ### The responsive single page
 
-My version of a lightweight single page written in SASS. It is free to use. The page is perfect to represent you - with its form field, "about you" part, "your projects" ... 
+My version of a lightweight single page written in SASS. It is free to use.<br />
+The page is perfect for representing (including a form field, "about you" part, "your projects" ... )
 
 ##### Features:
 - responsive
@@ -32,6 +33,6 @@ My version of a lightweight single page written in SASS. It is free to use. The 
 	* js (TODO)
 	
 	
-### Solve bugs
+##### Solve bugs
 
 1. JS: Menu button fade In/Out bug in combination with scrolling in Firefox
