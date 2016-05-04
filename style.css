@@ -169,10 +169,11 @@ $color-gray-dark-x
 $color-gray-dark-xx
 $color-gray-dark-xxx
 
-$font-size-headline-large
-$font-size-headline
-$font-size-teaser
-$font-size-text
+$font-size-headline-large (48px)
+$font-size-headline (36px)
+$font-size-headline-small (24px)
+$font-size-teaser (18px)
+$font-size-text (14px)
 
 $font-weight-thin
 $font-weight-normal
@@ -566,13 +567,22 @@ h1 {
   margin-bottom: 20px;
   margin-bottom: 1.25rem; }
 
-h2, h3 {
+h2 {
   font-size: 36px;
   font-size: 2.25rem;
-  line-height: 53.28px;
-  line-height: 3.33rem;
-  margin-bottom: 10px;
-  margin-bottom: 0.625rem;
+  line-height: 47.36px;
+  line-height: 2.96rem;
+  margin: 15px 0;
+  margin: 0.9375rem 0;
+  color: #00b9c4; }
+
+h3 {
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 35.52px;
+  line-height: 2.22rem;
+  margin: 15px 0 10px 0;
+  margin: 0.9375rem 0 0.625rem 0;
   color: #00b9c4; }
 
 p, i {
@@ -610,8 +620,8 @@ p, i {
               justify-content: center;
       overflow: hidden;
       border-radius: 50%;
-      width: 50vw;
-      height: 50vw;
+      width: 60vw;
+      height: 60vw;
       border: 1px solid #ffffff;
       font-size: 7vw;
       color: #008189;
@@ -741,10 +751,12 @@ p, i {
     #person .person-text h2 {
       font-size: 48px;
       font-size: 3rem;
-      line-height: 71.04px;
-      line-height: 4.44rem;
+      line-height: 53.28px;
+      line-height: 3.33rem;
       border-bottom: 1px solid #3b4149;
-      background-clip: content-box; }
+      background-clip: content-box;
+      padding-bottom: 20px;
+      padding-bottom: 1.25rem; }
     #person .person-text p {
       font-size: 18px;
       font-size: 1.125rem;
@@ -769,8 +781,8 @@ p, i {
     position: absolute;
     top: 20px;
     left: 0;
-    padding: 0 10px 5px 10px;
-    padding: 0 0.625rem 0.3125rem 0.625rem;
+    padding: 5px 10px 15px 10px;
+    padding: 0.3125rem 0.625rem 0.9375rem 0.625rem;
     /* include transparency - example: 0.5 */
     background: #22272f;
     color: #7c8aa1; }

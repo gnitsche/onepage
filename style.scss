@@ -39,10 +39,11 @@ $color-gray-dark-x
 $color-gray-dark-xx
 $color-gray-dark-xxx
 
-$font-size-headline-large
-$font-size-headline
-$font-size-teaser
-$font-size-text
+$font-size-headline-large (48px)
+$font-size-headline (36px)
+$font-size-headline-small (24px)
+$font-size-teaser (18px)
+$font-size-text (14px)
 
 $font-weight-thin
 $font-weight-normal
@@ -188,9 +189,14 @@ h1 {
   @include font-size($font-size-headline-large);
   @include rem("margin-bottom", 20px);
 }
-h2, h3 {
-  @include font-size($font-size-headline);
-  @include rem("margin-bottom", 10px);
+h2 {
+  @include font-size($font-size-headline, 32px);
+  @include rem("margin", 15px 0);
+  color: $color;
+}
+h3 {
+  @include font-size($font-size-headline-small);
+  @include rem("margin", 15px 0 10px 0);
   color: $color;
 }
 p, i {
@@ -209,7 +215,7 @@ p, i {
 		h1 {
       display: block;
       @extend .center-h;
-      @include btn-circular(50vw, false, $color-white, 0.5); // width, image, color, alpha
+      @include btn-circular(60vw, false, $color-white, 0.5); // width, image, color, alpha
       // @include font-size($font-size-teaser, false);
       border: 1px solid $color-white;
       font-size: 7vw;
@@ -258,8 +264,9 @@ p, i {
         text-align: left;
       }
       h2 {
-        @include font-size($font-size-headline-large);
+        @include font-size($font-size-headline-large, $font-size-headline);
         @include set-border(bottom, 1px, solid, $color-gray-light);
+        @include rem("padding-bottom", 20px);
       }
       p {
         @include font-size($font-size-teaser);
@@ -271,6 +278,7 @@ p, i {
 #drei {
 	header {
     // parallax
+    // TODO: smaller Headline on small screen, or image height=300, HL center? ...
     position: relative;
     overflow: hidden;
     height: 200px;
@@ -285,7 +293,7 @@ p, i {
       position: absolute;
       top: 20px;
       left: 0;
-      @include rem("padding", 0 10px 5px 10px);
+      @include rem("padding", 5px 10px 15px 10px);
       @include set-background($color-gray-dark);
     }
 	}

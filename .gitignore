@@ -1,9 +1,5 @@
 *.log
-*.psd
 _work/
 _backup/
 *~
 .htaccess
-.gitignore
-sitemap.xml
-sitemap.xml.gz
