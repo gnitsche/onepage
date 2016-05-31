@@ -1,9 +1,10 @@
 // ========================================================================
-// grid visualisation
+// text / hide
 // ========================================================================
 
-.grid {
-	box-sizing: border-box;
-	position: relative;
-	border: 1px solid lightblue;
+@mixin hide-text {
+  display:block;
+  overflow:hidden;
+  text-align: left;
+  text-indent:-9999px;
 }

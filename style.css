@@ -4,7 +4,6 @@
 @include zen-new-row(left); // clear
 @include undo-zen-new-row(); // clear: none;
 */
-/* reset *******************/
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -102,8 +101,10 @@ input, textarea {
 textarea {
   resize: none; }
 
-/* extends *******************/
-.center-h, #page, #header-welcome .header-text, #header-welcome .header-text h1, #person .person-image b, #favorite-items #projects .project-a b, #favorite-items #projects .project-b b, #favorite-items #projects .project-c b {
+p {
+  -webkit-text-size-adjust: 100%; }
+
+.center-h, #page, #header-welcome .header-text, #header-welcome .header-text h1, #person .person-image span, #favorite-items #projects .project-a .projects-label, #favorite-items #projects .project-b .projects-label, #favorite-items #projects .project-c .projects-label {
   margin: 0 auto; }
 
 .center-v, #header-welcome, #favorite-items #projects .project-a, #favorite-items #projects .project-b, #favorite-items #projects .project-c {
@@ -121,9 +122,7 @@ textarea {
   position: relative;
   border: 1px solid lightblue; }
 
-/* reset ul li */
 .resetlist, #navigation #navigation-menu {
-  /* put it into <ul> */
   list-style: none;
   margin: 0;
   padding: 0; }
@@ -131,22 +130,7 @@ textarea {
     margin: 0;
     padding: 0; }
 
-/* mixins *******************/
 /* background color incl automatic font color */
-/* fullscreen background image */
-/* border */
-/* button circular */
-/* mixins for margin and padding in REM */
-/* example: 
-@include font-loader("functionpro", "FunctionPro-CondensedBold-webfont", 700, normal);
-@include font-loader("functionpro", "FunctionPro-CondensedLight-webfont", 300, normal);
-*/
-/* Better USE SVG 
-https://css-tricks.com/icon-fonts-vs-svg/
-*/
-/* font */
-/* font size */
-/* theme "darkblue" *******************/
 @font-face {
   font-family: "texgyreadventorregular";
   src: url("theme/darkblue/fonts/texgyreadventor-regular-webfont.eot");
@@ -159,6 +143,19 @@ https://css-tricks.com/icon-fonts-vs-svg/
   src: url("theme/darkblue/fonts/texgyreadventor-bold-webfont.eot?#iefix") format("embedded-opentype"), url("theme/darkblue/fonts/texgyreadventor-bold-webfont.woff2") format("woff2"), url("theme/darkblue/fonts/texgyreadventor-bold-webfont.woff") format("woff"), url("theme/darkblue/fonts/texgyreadventor-bold-webfont.ttf") format("truetype"), url("theme/darkblue/fonts/texgyreadventor-bold-webfont.svg#texgyreadventorbold") format("svg");
   font-weight: 700;
   font-style: normal; }
+.icon-text, #contact #form-text textarea {
+  background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='30' height='30' viewBox='0 0 768 768'><path fill='#92959a' d='M96 160h576q13.25 0 22.625 9.375t9.375 22.625-9.375 22.625-22.625 9.375h-576q-13.25 0-22.625-9.375t-9.375-22.625 9.375-22.625 22.625-9.375zM96 544h448q13.25 0 22.625 9.375t9.375 22.625-9.375 22.625-22.625 9.375h-448q-13.25 0-22.625-9.375t-9.375-22.625 9.375-22.625 22.625-9.375zM96 416h576q13.25 0 22.625 9.375t9.375 22.625-9.375 22.625-22.625 9.375h-576q-13.25 0-22.625-9.375t-9.375-22.625 9.375-22.625 22.625-9.375zM96 288h448q13.25 0 22.625 9.375t9.375 22.625-9.375 22.625-22.625 9.375h-448q-13.25 0-22.625-9.375t-9.375-22.625 9.375-22.625 22.625-9.375z'></path></svg>"); }
+
+.icon-email, #contact #form-email input {
+  background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='30' height='30' viewBox='0 0 768 768'><path fill='#92959a' d='M128 96h512q39.75 0 67.875 28.125t28.125 67.875v384q0 39.75-28.125 67.875t-67.875 28.125h-512q-39.75 0-67.875-28.125t-28.125-67.875v-384q0-39.75 28.125-67.875t67.875-28.125zM672 576v-349.5l-268 214.5q-8.5 7-20 7t-20-7l-268-214.5v349.5q0 13.25 9.375 22.625t22.625 9.375h512q13.25 0 22.625-9.375t9.375-22.625zM640 160h-512q-4.75 0-10.5 1.75l266.5 213.25 266.5-213.25q-5.75-1.75-10.5-1.75z'></path></svg>"); }
+
+.icon-user, #contact #form-firstname input,
+#contact #form-lastname input {
+  background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='30' height='30' viewBox='0 0 768 768'><path fill='#92959a' d='M384 0q52.25 0 96.375 25.75t69.875 69.875 25.75 96.375v96q0 40-15.5 75.75t-43.25 62.25q73 11.5 129.75 33.875t88.875 52.875 32.125 64.25v63q0 39.75-28.125 67.875t-67.875 28.125h-576q-39.75 0-67.875-28.125t-28.125-67.875v-63.25q0-33.75 32.125-64.25t88.75-52.875 129.625-33.625q-27.5-26.75-43-62.375t-15.5-75.625v-96q0-52.25 25.75-96.375t69.875-69.875 96.375-25.75zM384 480q-69.5 0-134.125 11.125t-112.625 31.125q-19.25 8-34.375 17t-23 16.25-11.875 12.625-4 8.625v63.25q0 13.25 9.375 22.625t22.625 9.375h576q13.25 0 22.625-9.375t9.375-22.625v-63q0-3.25-4-8.625t-11.875-12.625-23-16.25-34.375-17.25q-48-20-112.625-31.125t-134.125-11.125zM384 64q-53 0-90.5 37.5t-37.5 90.5v96q0 53 37.5 90.5t90.5 37.5 90.5-37.5 37.5-90.5v-96q0-53-37.5-90.5t-90.5-37.5z'></path></svg>"); }
+
+.icon-web, #contact #form-web input {
+  background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='30' height='30' viewBox='0 0 768 768'><path fill='#92959a' d='M224 32h320q39.75 0 67.875 28.125t28.125 67.875v608l-256-192-256 192v-608q0-39.75 28.125-67.875t67.875-28.125zM544 96h-320q-13.25 0-22.625 9.375t-9.375 22.625v480l192-144 192 144v-480q0-13.25-9.375-22.625t-22.625-9.375z'></path></svg>"); }
+
 /*
 $color-gray-light-xxx
 $color-gray-light-xx
@@ -179,8 +176,6 @@ $font-weight-thin
 $font-weight-normal
 $font-weight-bold
 */
-/* page * grid **********************************************************************/
-/* separate the grid from the style */
 /* block 1 ******/
 #header-welcome {
   float: left;
@@ -389,13 +384,7 @@ $font-weight-bold
         padding-right: 10px;
         box-sizing: border-box; } }
   #favorite-items #projects {
-    clear: both
-    /*
-		.project-a { @include zen-grid-item(6, 1); }
-		.project-b { @include zen-new-row(both); @include zen-grid-item(6, 1); }
-		.project-c { @include zen-new-row(both); @include zen-grid-item(6, 1); }
-    @include breakpoint($device-medium) {
-    */ }
+    clear: both; }
     #favorite-items #projects .project-a {
       float: left;
       width: 33.33333%;
@@ -543,9 +532,8 @@ footer div {
   padding-right: 10px;
   box-sizing: border-box; }
 
-/* page * style **********************************************************************/
 body {
-  font-family: "texgyreadventorregular", Helvetica, sans-serif;
+  font-family: "texgyreadventorregular";
   font-weight: 400;
   font-style: normal;
   /* include transparency - example: 0.5 */
@@ -648,8 +636,7 @@ p, i {
           border-radius: 50%;
           width: 40vw;
           height: 40vw;
-          font-size: 6vw;
-          color: #008189; } }
+          font-size: 6vw; } }
       @media (min-width: 60.0625rem) {
         #header-welcome .header-text h1 {
           /* include transparency - example: 0.5 */
@@ -671,20 +658,19 @@ p, i {
           border-radius: 50%;
           width: 50vmin;
           height: 50vmin;
-          font-size: 5vmin;
-          color: #008189; } }
+          font-size: 5vmin; } }
 
 /* block 2 ******/
 #person {
-  clear: both;
-  border-bottom: 1px solid #3b4149;
-  background-clip: content-box; }
-  #person .person-image b {
+  clear: both; }
+  #person .person-image span {
     display: block;
     margin-top: 5vmax;
     /* include transparency - example: 0.5 */
-    background: #3b4149;
-    color: #9fa7b1;
+    background: #22272f;
+    color: #7c8aa1;
+    background: url("img/user.png") no-repeat center center;
+    background-size: cover;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -702,10 +688,12 @@ p, i {
     width: 50vw;
     height: 50vw; }
     @media (min-width: 40.0625rem) {
-      #person .person-image b {
+      #person .person-image span {
         /* include transparency - example: 0.5 */
-        background: #3b4149;
-        color: #9fa7b1;
+        background: #22272f;
+        color: #7c8aa1;
+        background: url("img/user.png") no-repeat center center;
+        background-size: cover;
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -723,10 +711,12 @@ p, i {
         width: 35vw;
         height: 35vw; } }
     @media (min-width: 60.0625rem) {
-      #person .person-image b {
+      #person .person-image span {
         /* include transparency - example: 0.5 */
-        background: #3b4149;
-        color: #9fa7b1;
+        background: #22272f;
+        color: #7c8aa1;
+        background: url("img/user.png") no-repeat center center;
+        background-size: cover;
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -743,6 +733,11 @@ p, i {
         border-radius: 50%;
         width: 15vw;
         height: 15vw; } }
+    #person .person-image span b {
+      display: block;
+      overflow: hidden;
+      text-align: left;
+      text-indent: -9999px; }
   #person .person-text {
     text-align: center; }
     @media (min-width: 40.0625rem) {
@@ -753,42 +748,43 @@ p, i {
       font-size: 3rem;
       line-height: 53.28px;
       line-height: 3.33rem;
-      border-bottom: 1px solid #3b4149;
-      background-clip: content-box;
       padding-bottom: 20px;
       padding-bottom: 1.25rem; }
-    #person .person-text p {
+    #person .person-text .text-intro {
       font-size: 18px;
       font-size: 1.125rem;
       line-height: 26.64px;
-      line-height: 1.665rem; }
+      line-height: 1.665rem;
+      padding-bottom: 15px;
+      padding-bottom: 0.9375rem; }
 
 /* block 3 ******/
 #drei header {
   position: relative;
   overflow: hidden;
-  height: 200px; }
+  height: 300px; }
   #drei header .header-bg {
     position: relative;
     height: 100%;
     background: url("img/demo.jpg") no-repeat center center;
     background-size: cover;
     position: absolute;
-    top: 50px;
+    top: 75px;
     width: 100%;
-    height: 500px; }
+    height: 600px; }
   #drei header h2 {
     position: absolute;
-    top: 20px;
+    top: 30px;
     left: 0;
-    padding: 5px 10px 15px 10px;
-    padding: 0.3125rem 0.625rem 0.9375rem 0.625rem;
+    font-size: 24px;
+    font-size: 1.5rem;
+    line-height: 35.52px;
+    line-height: 2.22rem;
+    padding: 5px 10px 5px 10px;
+    padding: 0.3125rem 0.625rem 0.3125rem 0.625rem;
     /* include transparency - example: 0.5 */
     background: #22272f;
     color: #7c8aa1; }
-#drei section {
-  border-bottom: 1px solid #3b4149;
-  background-clip: content-box; }
 
 /* block 4 ******/
 #favorite-topitem {
@@ -799,11 +795,28 @@ p, i {
 
 /* block 5 ******/
 #favorite-items #projects .project-a, #favorite-items #projects .project-b, #favorite-items #projects .project-c {
-  height: 40vw; }
+  height: 40vw;
+  overflow: hidden; }
   @media (min-width: 60.0625rem) {
     #favorite-items #projects .project-a, #favorite-items #projects .project-b, #favorite-items #projects .project-c {
       height: 25vw; } }
-#favorite-items #projects .project-a b {
+  #favorite-items #projects .project-a .projects-label, #favorite-items #projects .project-b .projects-label, #favorite-items #projects .project-c .projects-label {
+    text-align: center; }
+    #favorite-items #projects .project-a .projects-label b, #favorite-items #projects .project-b .projects-label b, #favorite-items #projects .project-c .projects-label b {
+      display: block;
+      width: 100%;
+      padding: 5px;
+      padding: 0.3125rem;
+      /* include transparency - example: 0.5 */
+      background: rgba(0, 0, 0, 0.75);
+      color: #666666;
+      color: #ffffff;
+      white-space: nowrap; }
+      @media (min-width: 60.0625rem) {
+        #favorite-items #projects .project-a .projects-label b, #favorite-items #projects .project-b .projects-label b, #favorite-items #projects .project-c .projects-label b {
+          padding: 15px;
+          padding: 0.9375rem; } }
+#favorite-items #projects .project-a .projects-label {
   /* include transparency - example: 0.5 */
   background: #22272f;
   color: #7c8aa1;
@@ -823,10 +836,10 @@ p, i {
           justify-content: center;
   overflow: hidden;
   border-radius: 50%;
-  width: 25vw;
-  height: 25vw; }
+  width: 27vw;
+  height: 27vw; }
   @media (min-width: 60.0625rem) {
-    #favorite-items #projects .project-a b {
+    #favorite-items #projects .project-a .projects-label {
       /* include transparency - example: 0.5 */
       background: #22272f;
       color: #7c8aa1;
@@ -846,9 +859,9 @@ p, i {
               justify-content: center;
       overflow: hidden;
       border-radius: 50%;
-      width: 15vw;
-      height: 15vw; } }
-#favorite-items #projects .project-b b {
+      width: 20vw;
+      height: 20vw; } }
+#favorite-items #projects .project-b .projects-label {
   /* include transparency - example: 0.5 */
   background: #22272f;
   color: #7c8aa1;
@@ -868,10 +881,10 @@ p, i {
           justify-content: center;
   overflow: hidden;
   border-radius: 50%;
-  width: 25vw;
-  height: 25vw; }
+  width: 27vw;
+  height: 27vw; }
   @media (min-width: 60.0625rem) {
-    #favorite-items #projects .project-b b {
+    #favorite-items #projects .project-b .projects-label {
       /* include transparency - example: 0.5 */
       background: #22272f;
       color: #7c8aa1;
@@ -891,9 +904,9 @@ p, i {
               justify-content: center;
       overflow: hidden;
       border-radius: 50%;
-      width: 15vw;
-      height: 15vw; } }
-#favorite-items #projects .project-c b {
+      width: 20vw;
+      height: 20vw; } }
+#favorite-items #projects .project-c .projects-label {
   /* include transparency - example: 0.5 */
   background: #22272f;
   color: #7c8aa1;
@@ -913,10 +926,10 @@ p, i {
           justify-content: center;
   overflow: hidden;
   border-radius: 50%;
-  width: 25vw;
-  height: 25vw; }
+  width: 27vw;
+  height: 27vw; }
   @media (min-width: 60.0625rem) {
-    #favorite-items #projects .project-c b {
+    #favorite-items #projects .project-c .projects-label {
       /* include transparency - example: 0.5 */
       background: #22272f;
       color: #7c8aa1;
@@ -936,8 +949,8 @@ p, i {
               justify-content: center;
       overflow: hidden;
       border-radius: 50%;
-      width: 15vw;
-      height: 15vw; } }
+      width: 20vw;
+      height: 20vw; } }
 
 /* block 6 ******/
 #contact div {
@@ -950,7 +963,7 @@ p, i {
   padding: 0.625rem 0 0.625rem 3.125rem;
   background-color: #262c35;
   color: #92959a;
-  font-family: "texgyreadventorregular", Helvetica, sans-serif;
+  font-family: "texgyreadventorregular";
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
@@ -966,20 +979,13 @@ p, i {
   #contact input:focus, #contact textarea:focus {
     border-color: #00b9c4;
     color: #00b9c4; }
-#contact #form-text textarea {
-  background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='30' height='30' viewBox='0 0 768 768'><path fill='#92959a' d='M96 160h576q13.25 0 22.625 9.375t9.375 22.625-9.375 22.625-22.625 9.375h-576q-13.25 0-22.625-9.375t-9.375-22.625 9.375-22.625 22.625-9.375zM96 544h448q13.25 0 22.625 9.375t9.375 22.625-9.375 22.625-22.625 9.375h-448q-13.25 0-22.625-9.375t-9.375-22.625 9.375-22.625 22.625-9.375zM96 416h576q13.25 0 22.625 9.375t9.375 22.625-9.375 22.625-22.625 9.375h-576q-13.25 0-22.625-9.375t-9.375-22.625 9.375-22.625 22.625-9.375zM96 288h448q13.25 0 22.625 9.375t9.375 22.625-9.375 22.625-22.625 9.375h-448q-13.25 0-22.625-9.375t-9.375-22.625 9.375-22.625 22.625-9.375z'></path></svg>"); }
-#contact #form-email input {
-  background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='30' height='30' viewBox='0 0 768 768'><path fill='#92959a' d='M128 96h512q39.75 0 67.875 28.125t28.125 67.875v384q0 39.75-28.125 67.875t-67.875 28.125h-512q-39.75 0-67.875-28.125t-28.125-67.875v-384q0-39.75 28.125-67.875t67.875-28.125zM672 576v-349.5l-268 214.5q-8.5 7-20 7t-20-7l-268-214.5v349.5q0 13.25 9.375 22.625t22.625 9.375h512q13.25 0 22.625-9.375t9.375-22.625zM640 160h-512q-4.75 0-10.5 1.75l266.5 213.25 266.5-213.25q-5.75-1.75-10.5-1.75z'></path></svg>"); }
-#contact #form-firstname input,
-#contact #form-lastname input {
-  background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='30' height='30' viewBox='0 0 768 768'><path fill='#92959a' d='M384 0q52.25 0 96.375 25.75t69.875 69.875 25.75 96.375v96q0 40-15.5 75.75t-43.25 62.25q73 11.5 129.75 33.875t88.875 52.875 32.125 64.25v63q0 39.75-28.125 67.875t-67.875 28.125h-576q-39.75 0-67.875-28.125t-28.125-67.875v-63.25q0-33.75 32.125-64.25t88.75-52.875 129.625-33.625q-27.5-26.75-43-62.375t-15.5-75.625v-96q0-52.25 25.75-96.375t69.875-69.875 96.375-25.75zM384 480q-69.5 0-134.125 11.125t-112.625 31.125q-19.25 8-34.375 17t-23 16.25-11.875 12.625-4 8.625v63.25q0 13.25 9.375 22.625t22.625 9.375h576q13.25 0 22.625-9.375t9.375-22.625v-63q0-3.25-4-8.625t-11.875-12.625-23-16.25-34.375-17.25q-48-20-112.625-31.125t-134.125-11.125zM384 64q-53 0-90.5 37.5t-37.5 90.5v96q0 53 37.5 90.5t90.5 37.5 90.5-37.5 37.5-90.5v-96q0-53-37.5-90.5t-90.5-37.5z'></path></svg>"); }
-#contact #form-web input {
-  background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='30' height='30' viewBox='0 0 768 768'><path fill='#92959a' d='M224 32h320q39.75 0 67.875 28.125t28.125 67.875v608l-256-192-256 192v-608q0-39.75 28.125-67.875t67.875-28.125zM544 96h-320q-13.25 0-22.625 9.375t-9.375 22.625v480l192-144 192 144v-480q0-13.25-9.375-22.625t-22.625-9.375z'></path></svg>"); }
 #contact .form-error {
   position: absolute;
   top: 1px;
   left: 11px;
-  background-color: #ff5f63;
+  /* include transparency - example: 0.5 */
+  background: #ff5f63;
+  color: #920004;
   padding: 10px 0 10px 10px;
   padding: 0.625rem 0 0.625rem 0.625rem;
   width: calc(100% - 22px);
@@ -989,7 +995,6 @@ p, i {
   line-height: 2.405rem;
   text-align: right; }
   #contact .form-error b {
-    color: #ffffff;
     padding-right: 10px;
     padding-right: 0.625rem; }
 #contact #form-submit {
@@ -1020,22 +1025,95 @@ footer {
 #navigation #navigation-btn {
   display: block;
   position: fixed;
-  bottom: 0px;
-  left: calc(50% - 60px);
-  left: calc(50% - 3.75rem);
-  width: 120px;
-  width: 7.5rem;
-  font-size: 18px;
-  font-size: 1.125rem;
-  line-height: 47.36px;
-  line-height: 2.96rem;
-  text-align: center;
-  text-transform: uppercase;
+  bottom: -10px;
+  bottom: -0.625rem;
+  left: calc(50% - 30px);
+  left: calc(50% - 1.875rem);
+  width: 60px;
+  width: 3.75rem;
+  height: 60px;
+  height: 3.75rem;
   /* include transparency - example: 0.5 */
-  background: #00b9c4;
-  color: #91f9ff;
-  border: 1px solid #ffffff;
-  cursor: pointer; }
+  background: rgba(34, 39, 47, 0.2);
+  color: #7c8aa1;
+  cursor: pointer;
+  -webkit-animation: burgerbg 0.5s 1;
+          animation: burgerbg 0.5s 1; }
+@-webkit-keyframes burgerbg {
+  0% {
+    background-color: transparent; }
+  100% {
+    /* include transparency - example: 0.5 */
+    background: rgba(34, 39, 47, 0.2);
+    color: #7c8aa1; } }
+@keyframes burgerbg {
+  0% {
+    background-color: transparent; }
+  100% {
+    /* include transparency - example: 0.5 */
+    background: rgba(34, 39, 47, 0.2);
+    color: #7c8aa1; } }
+  #navigation #navigation-btn #navigation-icon {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: 50px;
+    width: 50px; }
+    #navigation #navigation-btn #navigation-icon span {
+      display: block;
+      position: absolute;
+      background: #ffffff;
+      height: 10px;
+      width: 100%;
+      opacity: 1;
+      left: 0;
+      -webkit-transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+              transform: rotate(0deg);
+      -webkit-transition: .25s ease-in-out;
+              transition: .25s ease-in-out; }
+      #navigation #navigation-btn #navigation-icon span:nth-child(1) {
+        top: 0px;
+        -webkit-animation: burger 4s 1;
+                animation: burger 4s 1; }
+      #navigation #navigation-btn #navigation-icon span:nth-child(2) {
+        top: 20px;
+        -webkit-animation: burger 2.5s 1;
+                animation: burger 2.5s 1; }
+      #navigation #navigation-btn #navigation-icon span:nth-child(3) {
+        top: 20px;
+        background-color: transparent; }
+      #navigation #navigation-btn #navigation-icon span:nth-child(4) {
+        top: 40px;
+        -webkit-animation: burger 1s 1;
+                animation: burger 1s 1; }
+@-webkit-keyframes burger {
+  0% {
+    background-color: transparent; }
+  100% {
+    background-color: #ffffff; } }
+@keyframes burger {
+  0% {
+    background-color: transparent; }
+  100% {
+    background-color: #ffffff; } }
+    #navigation #navigation-btn #navigation-icon.open span:nth-child(1) {
+      top: 20px;
+      width: 0%;
+      left: 50%; }
+    #navigation #navigation-btn #navigation-icon.open span:nth-child(2) {
+      -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+              transform: rotate(45deg); }
+    #navigation #navigation-btn #navigation-icon.open span:nth-child(3) {
+      background-color: #ffffff;
+      -webkit-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+              transform: rotate(-45deg); }
+    #navigation #navigation-btn #navigation-icon.open span:nth-child(4) {
+      top: 20px;
+      width: 0%;
+      left: 50%; }
 #navigation #navigation-menu {
   z-index: 2;
   display: none;
@@ -1058,22 +1136,17 @@ footer {
       width: 30%;
       left: 35%; } }
   #navigation #navigation-menu > li {
-    border-bottom: 1px solid #ffffff;
-    border-color: rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid #3b4149;
+    border-color: rgba(59, 65, 73, 0.2);
     background-clip: content-box;
-    font-family: "texgyreadventorbold", Helvetica, sans-serif;
+    font-family: "texgyreadventorbold";
     font-weight: 400;
     font-style: normal;
     font-size: 24px;
     font-size: 1.5rem;
     line-height: 53.28px;
     line-height: 3.33rem;
-    text-align: center
-    /*
-    @include breakpoint($device-large) {
-      @include font-size($font-size-text, 24px);
-    }
-    */ }
+    text-align: center; }
     @media (min-width: 40.0625rem) {
       #navigation #navigation-menu > li {
         font-size: 18px;

@@ -1,4 +1,10 @@
-//base font
+// ========================================================================
+// breakpoint
+// ========================================================================
+
+// Example: @include breakpoint(600px) { (include grid) }
+
+// base font
 $bf: 16;
 
 @function calculateRem($size) {
@@ -10,4 +16,3 @@ $bf: 16;
   $rem: calculateRem($size);
   @media(#{$min-max}: #{$rem}) { @content; }
 }
-// @include breakpoint(600px) {}

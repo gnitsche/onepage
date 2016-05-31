@@ -1,10 +1,10 @@
-// simple form validation
-// check if there are more than 2 character
+// ========================================================================
+// form validation (simple)
+// check more than 2 character
+// ========================================================================
 
 $("input,textarea").on('change', myFunction);
 $("input,textarea").on('blur', myFunction);
-
-// TODO: submit? - or next ajax feature ...
 
 function myFunction() {
 

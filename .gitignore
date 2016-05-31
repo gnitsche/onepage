@@ -1,5 +1,6 @@
 *.log
-_work/
-_backup/
+__work/
+__backup/
+__help/
 *~
 .htaccess

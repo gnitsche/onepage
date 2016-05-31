@@ -1,6 +1,23 @@
+// ========================================================================
+//
+// ONEPAGE
+//
+// Author:
+//
+// This file is subject to the terms and conditions defined in file:
+// (path to LICENSE.md)
+// which is part of this source code package.
+//
+// ========================================================================
+
+// ========================================================================
+// grid
+// ========================================================================
+
 @import "zen-grids";
 $zen-columns: 6; // Set the total number of columns in the grid.
 $zen-gutters: 20px;
+
 /* HOWTO
 @include zen-grid-item(2, 1, right); // width, position, left or right position
 @include zen-float(left); // float
@@ -8,15 +25,24 @@ $zen-gutters: 20px;
 @include undo-zen-new-row(); // clear: none;
 */
 
-/* reset *******************/
+// ========================================================================
+// reset
+// ========================================================================
+
 @import "extends/reset";
 
-/* extends *******************/
+// ========================================================================
+// extends
+// ========================================================================
+
 @import "extends/center";
 @import "extends/grid";
 @import "extends/resetlist";
 
-/* mixins *******************/
+// ========================================================================
+// mixins
+// ========================================================================
+
 @import "mixins/background";
 @import "mixins/border";
 @import "mixins/breakpoints";
@@ -24,9 +50,12 @@ $zen-gutters: 20px;
 @import "mixins/distance";
 @import "mixins/font-loader";
 @import "mixins/font";
+@import "mixins/text-hide";
 
-/* theme "darkblue" *******************/
-$theme: "darkblue";
+// ========================================================================
+// theme
+// ========================================================================
+
 @import "darkblue";
 
 /*
@@ -50,8 +79,18 @@ $font-weight-normal
 $font-weight-bold
 */
 
-/* page * grid **********************************************************************/
-/* separate the grid from the style */
+// Border radius
+$border-radius: null !default;
+@if $border-radius != null {
+  .radius {
+    @include rem("border-radius", $border-radius);
+  }
+}
+
+// ========================================================================
+// PAGE / GRID
+// (separate the grid from the style)
+// ========================================================================
 
 // default: > 0 (mobile first!)
 $device-small: 481px;
@@ -134,16 +173,9 @@ section, header, article, footer, div {
 
 	#projects {
     @include zen-new-row(both);
-    /*
-		.project-a { @include zen-grid-item(6, 1); }
-		.project-b { @include zen-new-row(both); @include zen-grid-item(6, 1); }
-		.project-c { @include zen-new-row(both); @include zen-grid-item(6, 1); }
-    @include breakpoint($device-medium) {
-    */
-      .project-a { @include zen-grid-item(2, 1); }
-  		.project-b { @include undo-zen-new-row(); @include zen-grid-item(2, 3); }
-  		.project-c { @include undo-zen-new-row(); @include zen-grid-item(2, 5); }
-    //}
+    .project-a { @include zen-grid-item(2, 1); }
+  	.project-b { @include undo-zen-new-row(); @include zen-grid-item(2, 3); }
+  	.project-c { @include undo-zen-new-row(); @include zen-grid-item(2, 5); }
 	}
 }
 /* block 6 ******/
@@ -170,13 +202,13 @@ section, header, article, footer, div {
 footer div { @include zen-new-row(both); @include zen-grid-item(6, 1); }
 
 
+// ========================================================================
+// PAGE / STYLE
+// ========================================================================
 
-
-
-/* page * style **********************************************************************/
 body {
-  @include font("texgyreadventorregular", $font-weight-normal);
-  @include set-background($color-gray-dark);
+  @include font($font-name-body, $font-weight-normal);
+  @include set-background($color-body);
 }
 #page {
   max-width: 1000px;
@@ -192,16 +224,16 @@ h1 {
 h2 {
   @include font-size($font-size-headline, 32px);
   @include rem("margin", 15px 0);
-  color: $color;
+  color: $color-headline;
 }
 h3 {
   @include font-size($font-size-headline-small);
   @include rem("margin", 15px 0 10px 0);
-  color: $color;
+  color: $color-headline;
 }
 p, i {
   @include font-size($font-size-text);
-  color: $color-white;
+  color: $color-text;
 }
 
 /* block 1 ******/
@@ -219,20 +251,18 @@ p, i {
       // @include font-size($font-size-teaser, false);
       border: 1px solid $color-white;
       font-size: 7vw;
-      color: $color-dark;
+      color: $color-headline-welcome;
       font-weight: $font-weight-bold;
       @include breakpoint($device-medium) {
         //@include font-size($font-size-headline, false);
         @include btn-circular(40vw, false, $color-white, 0.7); // width, image, color, alpha
         font-size: 6vw;
-        color: $color-dark;
       }
       @include breakpoint($device-large) {
         //@include btn-circular(30vw, false, $color-white, 0.1); // width, image, color, alpha
         @include btn-circular(50vmin, false, $color-white, 0.7); // width, image, color, alpha
         //@include font-size($font-size-headline-large, false);
         font-size: 5vmin;
-        color: $color-dark;
       }
       margin-bottom: 10vmax; // move to top
 
@@ -242,18 +272,23 @@ p, i {
 /* block 2 ******/
 #person {
   @include zen-new-row(both);
-  @include set-border(bottom, 1px, solid, $color-gray-light);
+  //@include set-border(bottom, 1px, solid, $color-divider);
 		.person-image {
-      b {
+      span {
           display: block;
           @extend .center-h;
           margin-top: 5vmax; // move to top
-          @include btn-circular(50vw); // width, image, color, alpha
+          @include btn-circular(50vw, 'img/user.png', $color-image-border);  // width, image, color, alpha
           @include breakpoint($device-medium) {
-            @include btn-circular(35vw); // width, image, color, alpha
+            @include btn-circular(35vw, 'img/user.png', $color-image-border);  // width, image, color, alpha
+            //@include btn-circular(35vw); // width, image, color, alpha
           }
           @include breakpoint($device-large) {
-            @include btn-circular(15vw); // width, image, color, alpha
+            @include btn-circular(15vw, 'img/user.png', $color-image-border);  // width, image, color, alpha
+            //@include btn-circular(15vw); // width, image, color, alpha
+          }
+          b {
+            @include hide-text;
           }
       	}
       }
@@ -265,11 +300,12 @@ p, i {
       }
       h2 {
         @include font-size($font-size-headline-large, $font-size-headline);
-        @include set-border(bottom, 1px, solid, $color-gray-light);
+        //@include set-border(bottom, 1px, solid, $color-divider);
         @include rem("padding-bottom", 20px);
       }
-      p {
+      .text-intro {
         @include font-size($font-size-teaser);
+        @include rem("padding-bottom", 15px);
       }
 		}
 }
@@ -278,27 +314,30 @@ p, i {
 #drei {
 	header {
     // parallax
-    // TODO: smaller Headline on small screen, or image height=300, HL center? ...
+    // only change the height
+    $parallax-height: 300px;
+
     position: relative;
     overflow: hidden;
-    height: 200px;
+    height: $parallax-height;
     .header-bg {
       @include set-background-image('img/demo.jpg');
       position: absolute;
-      top: 50px;
+      top: $parallax-height / 4;
       width: 100%;
-      height: 500px;
+      height: $parallax-height * 2;
     }
     h2 {
       position: absolute;
-      top: 20px;
+      top: $parallax-height / 10;
       left: 0;
-      @include rem("padding", 5px 10px 15px 10px);
+      @include font-size($font-size-headline-small, $font-size-headline-small);
+      @include rem("padding", 5px 10px 5px 10px);
       @include set-background($color-gray-dark);
     }
 	}
 	section {
-    @include set-border(bottom, 1px, solid, $color-gray-light);
+    //@include set-border(bottom, 1px, solid, $color-divider);
 		.first {
 			h3 {}
       p {}
@@ -337,35 +376,48 @@ p, i {
 	#projects {
     .project-a, .project-b, .project-c {
       height: 40vw;
+      overflow: hidden;
       @include breakpoint($device-large) {
         height: 25vw;
       }
       @extend .center-v;
-      b {
+      .projects-label {
         @extend .center-h;
+        text-align: center;
+        b {
+          display: block;
+          width: 100%;
+          @include rem("padding", 5px);
+          @include set-background($color-black, 0.75);
+          color: $color-white;
+          white-space: nowrap;
+          @include breakpoint($device-large) {
+            @include rem("padding", 15px);
+          }
+        }
       }
     }
 		.project-a {
-			b {
-				@include btn-circular(25vw, 'img/demo.jpg', $color-gray-dark);  // width, image, color, alpha
+			.projects-label {
+				@include btn-circular(27vw, 'img/demo.jpg', $color-image-border);  // width, image, color, alpha
         @include breakpoint($device-large) {
-          @include btn-circular(15vw, 'img/demo.jpg', $color-gray-dark);  // width, image, color, alpha
+          @include btn-circular(20vw, 'img/demo.jpg', $color-image-border);  // width, image, color, alpha
         }
 			}
 		}
 		.project-b {
-			b {
-				@include btn-circular(25vw, 'img/demo.jpg', $color-gray-dark);  // width, image, color, alpha
+			.projects-label {
+				@include btn-circular(27vw, 'img/demo.jpg', $color-image-border);  // width, image, color, alpha
         @include breakpoint($device-large) {
-          @include btn-circular(15vw, 'img/demo.jpg', $color-gray-dark);  // width, image, color, alpha
+          @include btn-circular(20vw, 'img/demo.jpg', $color-image-border);  // width, image, color, alpha
         }
 			}
 		}
 		.project-c {
-			b {
-				@include btn-circular(25vw, 'img/demo.jpg', $color-gray-dark);  // width, image, color, alpha
+			.projects-label {
+				@include btn-circular(27vw, 'img/demo.jpg', $color-image-border);  // width, image, color, alpha
         @include breakpoint($device-large) {
-          @include btn-circular(15vw, 'img/demo.jpg', $color-gray-dark);  // width, image, color, alpha
+          @include btn-circular(20vw, 'img/demo.jpg', $color-image-border);  // width, image, color, alpha
         }
 			}
 		}
@@ -377,21 +429,20 @@ p, i {
     position: relative;
   }
   label {
-    //@include rem("line-height", 20px);
-    // TODO: hide label - we do not need to read it
+    // hide label - we do not need to read it
     display: none;
   }
   #form-legend {}
   input, textarea {
     width: 100%;
     @include rem("padding", 10px 0 10px 50px);
-    background-color: $color-gray;
-    color: $color-gray-light-xx;
-  	@include font("texgyreadventorregular", $font-weight-normal); // textarea wants it again
+    background-color: $color-input-background;
+    color: $color-input-text;
+  	@include font($font-name-form, $font-weight-normal); // textarea wants it again
     @include font-size($font-size-teaser, 26px);
+    @include set-border(all, 1px, solid, $color-input-border);
+    @extend .radius !optional;
 
-  	//box-sizing: border-box;
-    @include set-border(all, 1px, solid, $color-gray-light);
     &:focus {
     	border-color: $color;
     	color: $color;
@@ -403,36 +454,31 @@ p, i {
   	background-repeat: no-repeat;
     background-clip: inherit;
   }
-  // TODO: icons to theme?
   #form-text textarea {
-  	//background-image: url('theme/' + $theme + '/icons/form-text.svg');
-    background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='30' height='30' viewBox='0 0 768 768'><path fill='" + $color-gray-light-xx + "' d='M96 160h576q13.25 0 22.625 9.375t9.375 22.625-9.375 22.625-22.625 9.375h-576q-13.25 0-22.625-9.375t-9.375-22.625 9.375-22.625 22.625-9.375zM96 544h448q13.25 0 22.625 9.375t9.375 22.625-9.375 22.625-22.625 9.375h-448q-13.25 0-22.625-9.375t-9.375-22.625 9.375-22.625 22.625-9.375zM96 416h576q13.25 0 22.625 9.375t9.375 22.625-9.375 22.625-22.625 9.375h-576q-13.25 0-22.625-9.375t-9.375-22.625 9.375-22.625 22.625-9.375zM96 288h448q13.25 0 22.625 9.375t9.375 22.625-9.375 22.625-22.625 9.375h-448q-13.25 0-22.625-9.375t-9.375-22.625 9.375-22.625 22.625-9.375z'></path></svg>");
+    @extend .icon-text;
   }
   #form-email input {
-  	//background-image: url('theme/' + $theme + '/icons/form-mail.svg');
-    background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='30' height='30' viewBox='0 0 768 768'><path fill='" + $color-gray-light-xx + "' d='M128 96h512q39.75 0 67.875 28.125t28.125 67.875v384q0 39.75-28.125 67.875t-67.875 28.125h-512q-39.75 0-67.875-28.125t-28.125-67.875v-384q0-39.75 28.125-67.875t67.875-28.125zM672 576v-349.5l-268 214.5q-8.5 7-20 7t-20-7l-268-214.5v349.5q0 13.25 9.375 22.625t22.625 9.375h512q13.25 0 22.625-9.375t9.375-22.625zM640 160h-512q-4.75 0-10.5 1.75l266.5 213.25 266.5-213.25q-5.75-1.75-10.5-1.75z'></path></svg>");
+    @extend .icon-email;
   }
   #form-firstname input,
   #form-lastname input {
-    //background-image: url('theme/' + $theme + '/icons/form-user.svg');
-    background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='30' height='30' viewBox='0 0 768 768'><path fill='" + $color-gray-light-xx + "' d='M384 0q52.25 0 96.375 25.75t69.875 69.875 25.75 96.375v96q0 40-15.5 75.75t-43.25 62.25q73 11.5 129.75 33.875t88.875 52.875 32.125 64.25v63q0 39.75-28.125 67.875t-67.875 28.125h-576q-39.75 0-67.875-28.125t-28.125-67.875v-63.25q0-33.75 32.125-64.25t88.75-52.875 129.625-33.625q-27.5-26.75-43-62.375t-15.5-75.625v-96q0-52.25 25.75-96.375t69.875-69.875 96.375-25.75zM384 480q-69.5 0-134.125 11.125t-112.625 31.125q-19.25 8-34.375 17t-23 16.25-11.875 12.625-4 8.625v63.25q0 13.25 9.375 22.625t22.625 9.375h576q13.25 0 22.625-9.375t9.375-22.625v-63q0-3.25-4-8.625t-11.875-12.625-23-16.25-34.375-17.25q-48-20-112.625-31.125t-134.125-11.125zM384 64q-53 0-90.5 37.5t-37.5 90.5v96q0 53 37.5 90.5t90.5 37.5 90.5-37.5 37.5-90.5v-96q0-53-37.5-90.5t-90.5-37.5z'></path></svg>");
+    @extend .icon-user;
   }
   #form-web input {
-  	//background-image: url('theme/' + $theme + '/icons/form-web.svg');
-    background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='30' height='30' viewBox='0 0 768 768'><path fill='" + $color-gray-light-xx + "' d='M224 32h320q39.75 0 67.875 28.125t28.125 67.875v608l-256-192-256 192v-608q0-39.75 28.125-67.875t67.875-28.125zM544 96h-320q-13.25 0-22.625 9.375t-9.375 22.625v480l192-144 192 144v-480q0-13.25-9.375-22.625t-22.625-9.375z'></path></svg>");
+    @extend .icon-web;
   }
 
   .form-error {
     position: absolute;
     top: 1px; // - border
     left: 11px;
-    background-color: $color-error;
+    @include set-background($color-error);
     @include rem("padding", 10px 0 10px 10px);
     width: calc(100% - 22px);
     @include font-size($font-size-teaser, 26px);
     text-align: right;
     b {
-      color: $color-white;
+      //color: $color-white;
       @include rem("padding-right", 10px);
     }
   }
@@ -446,14 +492,14 @@ p, i {
 
 }
 footer {
-	@include set-background($color-gray-dark-xxx);
+	@include set-background($color-footer-background);
   @include rem("padding", 10px);
   @include breakpoint($device-medium) {
     @include rem("padding", 20px 40px);
     text-align: center;
   }
 	p {
-    color: $color-gray-light-x;
+    color: $color-footer-text;
   }
 }
 
@@ -462,25 +508,95 @@ footer {
 	#navigation-btn {
 		display: block;
 		position:fixed;
-    @include rem("bottom", 0px);
-		//bottom: 10px;
-		left: calc(50% - 60px);
-    left: calc(50% - 3.75rem); // 60px / 16
-    @include rem("width", 120px);
-    //@include rem("height", 40px);
-    @include font-size($font-size-teaser, 32px);
-    //@include rem("line-height", 50px);
-		text-align:center;
-    text-transform: uppercase;
-		@include set-background($color);
-    border: 1px solid $color-white;
+    @include rem("bottom", -10px);
+		left: calc(50% - 30px);
+    left: calc(50% - 1.875rem); // 30px / 16
+    @include rem("width", 60px);
+    @include rem("height", 60px);
+		@include set-background($color-menu-icon-background, 0.2);
+    @extend .radius !optional;
     cursor: pointer;
+    animation: burgerbg 0.5s 1;
+    @keyframes burgerbg {
+      0% {
+          background-color: transparent;
+      }
+      100% {
+          @include set-background($color-menu-icon-background, 0.2);
+      }
+    }
+    #navigation-icon {
+      // burger to close animation
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      height:50px;
+      width: 50px;
+      span {
+        display: block;
+        position: absolute;
+        background: $color-menu-icon;
+        height: 10px;
+        width: 100%;
+        @extend .radius !optional;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+        &:nth-child(1) {
+          top: 0px;
+          animation: burger 4s 1;
+        }
+        &:nth-child(2) {
+          top: 20px;
+          animation: burger 2.5s 1;
+        }
+        &:nth-child(3) {
+          top: 20px;
+          background-color: transparent;
+        }
+        &:nth-child(4) {
+          top: 40px;
+          animation: burger 1s 1;
+        }
+      }
+      @keyframes burger {
+        0% {
+            background-color: transparent;
+        }
+        100% {
+            background-color: $color-menu-icon;
+        }
+      }
+      &.open {
+        span {
+          &:nth-child(1) {
+            top: 20px;
+            width: 0%;
+            left: 50%;
+          }
+          &:nth-child(2) {
+            transform: rotate(45deg);
+          }
+          &:nth-child(3) {
+            background-color: $color-menu-icon;
+            transform: rotate(-45deg);
+          }
+          &:nth-child(4) {
+            top: 20px;
+            width: 0%;
+            left: 50%;
+          }
+        }
+      }
+    }
 	}
 	#navigation-menu {
 		z-index:2;
 		@extend .resetlist;
 		display: none; //block
-		@include set-background($color-gray-dark, 0.9);
+		@include set-background($color-menu-background, 0.9);
+    @extend .radius !optional;
 		position:fixed;
     @include rem("bottom", 80px);
     @include rem("left", 10px);
@@ -495,28 +611,23 @@ footer {
       left: 35%;
     }
 		> li {
-			@include set-border(bottom, 1px, solid, #ffffff, 0.2);
-      @include font("texgyreadventorbold", $font-weight-normal);
+			@include set-border(bottom, 1px, solid, $color-divider, 0.2);
+      @include font($font-name-menu, $font-weight-normal);
 
       @include font-size($font-size-headline-small, 36px);
       text-align: center;
       @include breakpoint($device-medium) {
         @include font-size($font-size-teaser, 36px);
       }
-      /*
-      @include breakpoint($device-large) {
-        @include font-size($font-size-text, 24px);
-      }
-      */
 			a {
         @include rem("padding", 3px 10px 5px 10px);
-        color: $color-gray-light-xxx;
+        color: $color-menu-link;
         width: 100%;
         cursor: pointer;
         display: block;
         &:hover {
-          @include set-background($color-gray-dark-x);
-          color: $color-white;
+          @include set-background($color-menu-tab-hover);
+          color: $color-menu-link-hover;
         }
 			}
 			&:last-child {

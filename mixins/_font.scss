@@ -1,12 +1,18 @@
-/* font */
+// ========================================================================
+// font / family
+// ========================================================================
+
 // load Font incl. variables in theme
 @mixin font($family, $weight: $font-weight-normal, $style: normal) {
-  font-family: $family, Helvetica, sans-serif;
+  font-family: $family; // "Noto Serif, serif";
   font-weight: $font-weight-normal;
   font-style: $style;
 }
 
-/* font size */
+// ========================================================================
+// font / size
+// ========================================================================
+
 // Example: @include font-size($font-size-headline); // default line-height
 // Example: @include font-size($font-size-headline, $font-size-headline-big); // another line-height
 // Example: @include font-size($font-size-headline, false); // no line-height
@@ -15,11 +21,12 @@
   	$remSize: $size / 16px;
   	@return $remSize * 1rem;
 }
-@mixin font-size($size: 16px, $size-line-height: $size) {
+@mixin font-size($size: 16px, $size-line-height: false) {
 	font-size: $size;
   font-size: calculateRem($size);
-  @if ($size-line-height != false) {
-    line-height: $size-line-height * 1.48;
-    line-height: calculateRem($size-line-height * 1.48);
+  @if $size-line-height != false {
+    $size: $size-line-height;
   }
+  line-height: $size * 1.48;
+  line-height: calculateRem($size * 1.48);
 }

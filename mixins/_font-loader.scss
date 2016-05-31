@@ -1,5 +1,12 @@
-@mixin font-loader($fontName, $urlWithoutFileExtension, $font-weight, $font-style: normal){
-    // see https://css-tricks.com/snippets/css/using-font-face/
+// ========================================================================
+// font loader
+// ========================================================================
+
+// thanks to: https://css-tricks.com/snippets/css/using-font-face/
+
+// Example: @include font-loader("functionpro", "FunctionPro-CondensedBold-webfont", 700, normal);
+
+@mixin font-loader($fontName, $urlWithoutFileExtension, $font-weight, $font-style: normal) {
     @font-face {
         font-family: $fontName;
         src: url("#{$urlWithoutFileExtension}.eot"); // IE9 Compat Modes
@@ -12,12 +19,3 @@
         font-style: $font-style;
     }
 }
-
-/* example: 
-@include font-loader("functionpro", "FunctionPro-CondensedBold-webfont", 700, normal);
-@include font-loader("functionpro", "FunctionPro-CondensedLight-webfont", 300, normal);
-*/
-
-/* Better USE SVG 
-https://css-tricks.com/icon-fonts-vs-svg/
-*/

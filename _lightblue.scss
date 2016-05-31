@@ -4,16 +4,12 @@
 // font
 // ========================================================================
 
-// google font example:
-// @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic);
+// google font:
+@import url(https://fonts.googleapis.com/css?family=Noto+Serif:400,700);
 
-// local font:
-@include font-loader("texgyreadventorregular", "theme/darkblue/fonts/texgyreadventor-regular-webfont", 400, normal);
-@include font-loader("texgyreadventorbold", "theme/darkblue/fonts/texgyreadventor-bold-webfont", 700, normal);
-
-$font-name-body: "texgyreadventorregular";
-$font-name-form: "texgyreadventorregular";
-$font-name-menu: "texgyreadventorbold";
+$font-name-body: "'Noto Serif', serif";
+$font-name-form: "'Noto Serif', serif";
+$font-name-menu: "'Noto Serif', serif";
 
 $font-weight-thin: 400;
 $font-weight-normal: 400;
@@ -22,9 +18,9 @@ $font-weight-bold: 700;
 // traditional scale: (6, 7, 8, 9, 10, 11, 12, 14, 16, 18, 21, 24, 36, 48, 60, 72)
 $font-size-headline-large: 48px;
 $font-size-headline: 36px;
-$font-size-headline-small: 24px;
-$font-size-teaser: 18px;
-$font-size-text: 14px;
+$font-size-headline-small: 28px;
+$font-size-teaser: 21px;
+$font-size-text: 16px;
 
 // ========================================================================
 // border radius
@@ -33,14 +29,14 @@ $font-size-text: 14px;
 // ========================================================================
 
 // you dont want a border: hide the variable
-// $border-radius: 5px;
+$border-radius: 5px;
 
 // ========================================================================
 // colors
 // ========================================================================
 
 $color: #00b9c4; // blue
-$color-gray: #262c35; // default gray
+$color-gray: #f1f1f1; // default gray
 
 $color-white: #ffffff;
 $color-black: #000000;
@@ -63,25 +59,25 @@ $color-info: #e4965e; // yellow
 
 // define colors for fonts, elements
 // font:
-$color-text: $color-white; // (p, i)
+$color-text: $color-black; //$color-white; // (p, i)
 $color-headline: $color; // (h1,h2,h3...)
 $color-headline-welcome: $color-dark; // (circular element / startscreen)
-$color-input-text: $color-gray-light-xx;
-$color-footer-text: $color-gray-light-x;
-$color-menu-link: $color-gray-light-xxx; // menu tab
+$color-input-text: $color-gray-dark-xxx;
+$color-footer-text: $color-gray-dark-xxx;
+$color-menu-link: $color-white; // menu tab
 $color-menu-link-hover: $color-white; // menu tab
 // elements:
-$color-body: $color-gray-dark; // document
-$color-menu-icon: $color-white; // (burger icon)
+$color-body: $color-gray; // document
+$color-menu-icon: $color-black;  // (burger icon)
 $color-menu-icon-background: $color-gray-dark;
-$color-menu-background: $color-gray-dark;
-$color-menu-tab-hover: $color-gray-dark-x; // menu tab
-$color-input-icon: $color-gray-light-xx;
-$color-input-border: $color-gray-light;
-$color-input-background: $color-gray;
-$color-divider: $color-gray-light; // border divider
-$color-image-border: $color-gray-dark; // circular image border
-$color-footer-background: $color-gray-dark-xxx;
+$color-menu-background: $color;
+$color-menu-tab-hover: $color-dark; // menu tab
+$color-input-icon: $color;
+$color-input-border: $color-gray-dark;
+$color-input-background: $color-white;
+$color-divider: $color-gray-dark; // border divider
+$color-image-border: $color-white; // circular image border
+$color-footer-background: $color-gray-dark;
 
 // ========================================================================
 // icons

@@ -1,6 +1,9 @@
-/* reset ul li */
+// ========================================================================
+// reset list element
+// ========================================================================
+
+// put this @extend into <ul>
 .resetlist {
-	/* put it into <ul> */
 	list-style: none;
   	margin: 0;
   	padding: 0;

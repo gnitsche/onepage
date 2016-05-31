@@ -1,3 +1,14 @@
+// ========================================================================
+// background / color
+// (background color and automatic font color)
+// ========================================================================
+
+// Idea: http://thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass
+
+// Example:
+// @include set-border(bottom, 1px, solid, #ffffff, 0.5);
+// @include set-border(all, 3px, solid, $color-black);
+
 /* background color incl automatic font color */
 @function set-color($color) {
     @if (lightness($color) > 50) {
@@ -19,8 +30,11 @@
     color: set-color($bg-color);
 }
 
+// ========================================================================
+// background / image
+// (fullscreen)
+// ========================================================================
 
-/* fullscreen background image */
 @mixin set-background-image($bg-image) {
 	position: relative;
     height: 100%;

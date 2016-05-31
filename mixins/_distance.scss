@@ -1,5 +1,10 @@
-/* mixins for margin and padding in REM */
+// ========================================================================
+// REM converter
+// ========================================================================
+
 // thanks to: http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+
+// example: @include rem(padding, 20px 10px);
 
 @function parseInt($n) {
   @return $n / ($n * 0 + 1);
@@ -24,7 +29,7 @@
         $px : append($px,  $value);
         $rem: append($rem, ($val / 16 + rem));
         // changes:
-        // html default font size = 100% 
+        // html default font size = 100%
         // and the devider = 16
       }
 
@@ -42,5 +47,3 @@
     #{$property}: $rem;
   }
 }
-
-// example: @include rem(padding, 20px 10px);

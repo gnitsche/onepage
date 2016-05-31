@@ -1,5 +1,7 @@
-/* button circular */
-// @mixin btn-circular($btnsize, $btnimage: false, $btncolor: false, $btnalpha: false) {
+// ========================================================================
+// button circular
+// ========================================================================
+
 @mixin btn-circular($btn-size, $btn-image: false, $btn-color: $color-gray-light, $btn-opacity: false) {
 
 	@include set-background($btn-color, $btn-opacity);
