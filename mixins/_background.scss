@@ -1,4 +1,15 @@
 // ========================================================================
+//
+// ONEPAGE
+//
+// Copyright (c) 2016, Gregor Nitsche, All rights reserved.
+//
+// This file is subject to the terms and conditions defined in file
+// 'LICENSE.md', which is part of this source code package.
+//
+// ========================================================================
+
+// ========================================================================
 // background / color
 // (background color and automatic font color)
 // ========================================================================
@@ -36,8 +47,9 @@
 // ========================================================================
 
 @mixin set-background-image($bg-image) {
+  display: flex;
 	position: relative;
-    height: 100%;
-    background: url($bg-image) no-repeat center center;
-    background-size: cover;
+  height: 100%;
+  background: url($bg-image) no-repeat center center;
+  background-size: cover;
 }

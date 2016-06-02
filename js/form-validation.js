@@ -1,4 +1,15 @@
 // ========================================================================
+//
+// ONEPAGE
+//
+// Copyright (c) 2016, Gregor Nitsche, All rights reserved.
+//
+// This file is subject to the terms and conditions defined in file
+// 'LICENSE.md', which is part of this source code package.
+//
+// ========================================================================
+
+// ========================================================================
 // form validation (simple)
 // check more than 2 character
 // ========================================================================

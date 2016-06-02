@@ -2,11 +2,10 @@
 //
 // ONEPAGE
 //
-// Author:
+// Copyright (c) 2016, Gregor Nitsche, All rights reserved.
 //
-// This file is subject to the terms and conditions defined in file:
-// (path to LICENSE.md)
-// which is part of this source code package.
+// This file is subject to the terms and conditions defined in file
+// 'LICENSE.md', which is part of this source code package.
 //
 // ========================================================================
 
@@ -149,7 +148,7 @@ section, header, article, footer, div {
 /* block 4 ******/
 #favorite-topitem {
   @include zen-new-row(both);
-	header { @include zen-grid-item(6, 1); }
+	.first { @include zen-grid-item(6, 1); }
 }
 /* block 5 ******/
 #favorite-items {
@@ -247,22 +246,24 @@ p, i {
 		h1 {
       display: block;
       @extend .center-h;
-      @include btn-circular(60vw, false, $color-white, 0.5); // width, image, color, alpha
-      // @include font-size($font-size-teaser, false);
-      border: 1px solid $color-white;
-      font-size: 7vw;
-      color: $color-headline-welcome;
-      font-weight: $font-weight-bold;
+      //@include btn-circular(60vw, false, $color-white, 0.7); // width, image, color, alpha
+      @include btn-circular(70vw, 'img/logo.png', $color-image-border);  // width, image, color, alpha
+      @include font-size($font-size-teaser, false);
+      //font-size: 7vw;
+      //color: $color-headline-welcome;
+      //font-weight: $font-weight-bold;
+      @include hide-text;
       @include breakpoint($device-medium) {
         //@include font-size($font-size-headline, false);
-        @include btn-circular(40vw, false, $color-white, 0.7); // width, image, color, alpha
-        font-size: 6vw;
+        //@include btn-circular(40vw, false, $color-white, 0.7); // width, image, color, alpha
+        @include btn-circular(35vw, 'img/logo.png', $color-image-border);  // width, image, color, alpha
+        //font-size: 6vw;
       }
       @include breakpoint($device-large) {
-        //@include btn-circular(30vw, false, $color-white, 0.1); // width, image, color, alpha
-        @include btn-circular(50vmin, false, $color-white, 0.7); // width, image, color, alpha
+        //@include btn-circular(50vmin, false, $color-white, 0.7); // width, image, color, alpha
+        @include btn-circular(35vw, 'img/logo.png', $color-image-border);  // width, image, color, alpha
         //@include font-size($font-size-headline-large, false);
-        font-size: 5vmin;
+        //font-size: 5vmin;
       }
       margin-bottom: 10vmax; // move to top
 
@@ -360,7 +361,9 @@ p, i {
 /* block 4 ******/
 #favorite-topitem {
 	@include set-background-image('img/demo.jpg');
-	header {}
+	.first {
+    h2 {}
+  }
 }
 /* block 5 ******/
 #favorite-items {
@@ -611,7 +614,7 @@ footer {
       left: 35%;
     }
 		> li {
-			@include set-border(bottom, 1px, solid, $color-divider, 0.2);
+			@include set-border(bottom, 1px, solid, $color-divider, 0.5);
       @include font($font-name-menu, $font-weight-normal);
 
       @include font-size($font-size-headline-small, 36px);
