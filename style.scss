@@ -24,6 +24,29 @@ $zen-gutters: 20px;
 @include undo-zen-new-row(); // clear: none;
 */
 
+/* INFOs
+Spelling of class names:
+[project name]-[js]-[block name]_[element ++]--[modifier]
+// op-head_logo_txt
+// op-js-special-a_hdr_img
+
+// acronyms [element]:
+
+(_adr) address
+(_btn) button
+(_foot) footer
+(_hdr) header
+(_img) image
+(_inp) input
+(_lbl) label
+(_lis) list
+(_logo) logo
+(_men) menu
+(_prj) project
+(_txt) text
+
+*/
+
 // ========================================================================
 // reset
 // ========================================================================
@@ -47,6 +70,8 @@ $zen-gutters: 20px;
 @import "mixins/breakpoints";
 @import "mixins/button";
 @import "mixins/distance";
+@import "mixins/effects";
+@import "mixins/escape";
 @import "mixins/font-loader";
 @import "mixins/font";
 @import "mixins/text-hide";
@@ -101,17 +126,17 @@ section, header, article, footer, div {
 }
 
 /* block 1 ******/
-#header-welcome { @include zen-grid-item(6, 1); }
+.op-head { @include zen-grid-item(6, 1); }
 /* block 2 ******/
-#person {
+.op-pers {
   @include zen-float(left);
   @include zen-new-row(both);
-		.person-image {
+		&_img {
 	  	@include zen-grid-item(6, 1);
       @include breakpoint($device-medium) { @include zen-grid-item(3, 1); }
       @include breakpoint($device-large) { @include zen-grid-item(2, 1); }
     }
-    .person-text {
+    &_txt {
       @include zen-new-row(both);
 			@include zen-grid-item(6, 1);
       @include breakpoint($device-medium) { @include undo-zen-new-row(); @include zen-grid-item(3, 4); }
@@ -120,47 +145,51 @@ section, header, article, footer, div {
 }
 /* block 3 ******/
 // special //
-#drei {
+.op-special-a {
   @include zen-new-row(both);
-	header {
-		.header-text { @include zen-grid-item(6, 1); }
+	&_hdr {
+		&_img { @include zen-grid-item(6, 1); }
 	}
-	section {
+	&_txt {
     @include zen-new-row(both);
-    .first { @include zen-grid-item(6, 1); }
-    .second { @include zen-new-row(both); @include zen-grid-item(6, 1); }
+    &_first { @include zen-grid-item(6, 1); }
+    &_second { @include zen-new-row(both); @include zen-grid-item(6, 1); }
     @include breakpoint($device-medium) {
-		  .first { @include zen-grid-item(3, 1); }
-		  .second { @include undo-zen-new-row(); @include zen-grid-item(3, 4); }
+		  &_first { @include zen-grid-item(3, 1); }
+		  &_second { @include undo-zen-new-row(); @include zen-grid-item(3, 4); }
     }
 	}
 }
-#vier {
-  @include zen-new-row(both);
-  .first { @include zen-grid-item(6, 1); }
-  .second { @include zen-new-row(both); @include zen-grid-item(6, 1); }
-  @include breakpoint($device-medium) {
-	  .first { @include zen-grid-item(2, 1); }
-	  .second { @include undo-zen-new-row(); @include zen-grid-item(4, 3); }
+.op-special-b {
+  &_txt {
+    @include zen-new-row(both);
+    &_first { @include zen-grid-item(6, 1); }
+    &_second { @include zen-new-row(both); @include zen-grid-item(6, 1); }
+    @include breakpoint($device-medium) {
+  	  &_first { @include zen-grid-item(2, 1); }
+  	  &_second { @include undo-zen-new-row(); @include zen-grid-item(4, 3); }
+    }
   }
 }
 // special //
 /* block 4 ******/
-#favorite-topitem {
-  @include zen-new-row(both);
-	.first { @include zen-grid-item(6, 1); }
+.op-favorite-a {
+  &_txt {
+    @include zen-new-row(both);
+	  &_first { @include zen-grid-item(6, 1); }
+  }
 }
 /* block 5 ******/
-#favorite-items {
+.op-favorite-b {
   @include zen-new-row(both);
-	#news {
-		.news-a {
+	&_txt {
+		&_first {
       @include zen-grid-item(6, 1);
       @include breakpoint($device-medium) {
         @include zen-grid-item(3, 1);
       }
     }
-		.news-b {
+		&_second {
       @include zen-new-row(both);
       @include zen-grid-item(6, 1);
       @include breakpoint($device-medium) {
@@ -170,35 +199,36 @@ section, header, article, footer, div {
     }
 	}
 
-	#projects {
+	&_prj {
     @include zen-new-row(both);
-    .project-a { @include zen-grid-item(2, 1); }
-  	.project-b { @include undo-zen-new-row(); @include zen-grid-item(2, 3); }
-  	.project-c { @include undo-zen-new-row(); @include zen-grid-item(2, 5); }
+    &_a { @include zen-grid-item(2, 1); }
+  	&_b { @include undo-zen-new-row(); @include zen-grid-item(2, 3); }
+  	&_c { @include undo-zen-new-row(); @include zen-grid-item(2, 5); }
 	}
 }
 /* block 6 ******/
-#contact {
+.op-contact {
   @include zen-new-row(both);
-  #form-legend { @include zen-grid-item(6, 1); }
-  #form-firstname {  @include zen-new-row(both);  @include zen-grid-item(6, 1); }
-  #form-lastname { @include zen-new-row(both); @include zen-grid-item(6, 1); }
-  #form-email { @include zen-new-row(both); @include zen-grid-item(6, 1); }
-  #form-web { @include zen-new-row(both); @include zen-grid-item(6, 1); }
-  #form-text { @include zen-new-row(both); @include zen-grid-item(6, 1); }
+  &_leg { @include zen-grid-item(6, 1); }
+  &_item {
+    &--firstname {  @include zen-new-row(both);  @include zen-grid-item(6, 1); }
+    &--lastname { @include zen-new-row(both); @include zen-grid-item(6, 1); }
+    &--email { @include zen-new-row(both); @include zen-grid-item(6, 1); }
+    &--web { @include zen-new-row(both); @include zen-grid-item(6, 1); }
+    &--text { @include zen-new-row(both); @include zen-grid-item(6, 1); }
+  }
   @include breakpoint($device-medium) {
-    #form-legend {  @include zen-new-row(both); @include zen-grid-item(6, 1); }
-
-    #form-firstname {  @include zen-grid-item(3, 1); }
-	  #form-lastname {  @include undo-zen-new-row(); @include zen-grid-item(3, 4); }
-
-    #form-email {  @include zen-grid-item(3, 1); }
-    #form-web {  @include undo-zen-new-row(); @include zen-grid-item(3, 4); }
-
-    #form-text { @include zen-new-row(both); @include zen-grid-item(6, 1); }
+    &_leg {  @include zen-new-row(both); @include zen-grid-item(6, 1); }
+    &_item {
+      &--firstname {  @include zen-grid-item(3, 1); }
+      &--lastname {  @include undo-zen-new-row(); @include zen-grid-item(3, 4); }
+      &--email {  @include zen-grid-item(3, 1); }
+      &--web {  @include undo-zen-new-row(); @include zen-grid-item(3, 4); }
+      &--text { @include zen-new-row(both); @include zen-grid-item(6, 1); }
+    }
   }
 }
-footer div { @include zen-new-row(both); @include zen-grid-item(6, 1); }
+.op-foot { @include zen-new-row(both); @include zen-grid-item(6, 1); }
 
 
 // ========================================================================
@@ -209,7 +239,7 @@ body {
   @include font($font-name-body, $font-weight-normal);
   @include set-background($color-body);
 }
-#page {
+.op-page {
   max-width: 1000px;
   @extend .center-h;
 }
@@ -236,14 +266,14 @@ p, i {
 }
 
 /* block 1 ******/
-#header-welcome {
+.op-head {
   overflow: hidden;
   @include set-background-image('img/demo.jpg');
   @extend .center-v;
-	.header-text {
+	&_logo {
     @extend .center-h;
     text-align: center;
-		h1 {
+		&_txt {
       display: block;
       @extend .center-h;
       //@include btn-circular(60vw, false, $color-white, 0.7); // width, image, color, alpha
@@ -271,11 +301,11 @@ p, i {
 	}
 }
 /* block 2 ******/
-#person {
+.op-pers {
   @include zen-new-row(both);
   //@include set-border(bottom, 1px, solid, $color-divider);
-		.person-image {
-      span {
+		&_img {
+      &_item {
           display: block;
           @extend .center-h;
           margin-top: 5vmax; // move to top
@@ -288,23 +318,23 @@ p, i {
             @include btn-circular(15vw, 'img/user.png', $color-image-border);  // width, image, color, alpha
             //@include btn-circular(15vw); // width, image, color, alpha
           }
-          b {
+          &_lbl { // label
             @include hide-text;
           }
       	}
       }
 
-		.person-text {
+		&_txt {
       text-align: center;
       @include breakpoint($device-medium) {
         text-align: left;
       }
-      h2 {
+      &_hl {
         @include font-size($font-size-headline-large, $font-size-headline);
         //@include set-border(bottom, 1px, solid, $color-divider);
         @include rem("padding-bottom", 20px);
       }
-      .text-intro {
+      &_intro {
         @include font-size($font-size-teaser);
         @include rem("padding-bottom", 15px);
       }
@@ -312,79 +342,76 @@ p, i {
 }
 /* block 3 ******/
 // special //
-#drei {
-	header {
+.op-special-a {
+	&_hdr {
     // parallax
+    // do not rename the nested "_img", and "_hl"
     // only change the height
-    $parallax-height: 300px;
+    @include parallax(300px);
 
-    position: relative;
-    overflow: hidden;
-    height: $parallax-height;
-    .header-bg {
+    &_img {
+      // set the parallax background image
       @include set-background-image('img/demo.jpg');
-      position: absolute;
-      top: $parallax-height / 4;
-      width: 100%;
-      height: $parallax-height * 2;
     }
-    h2 {
-      position: absolute;
-      top: $parallax-height / 10;
-      left: 0;
+    &_hl {
+      // define the parallax layer
       @include font-size($font-size-headline-small, $font-size-headline-small);
       @include rem("padding", 5px 10px 5px 10px);
       @include set-background($color-gray-dark);
     }
 	}
-	section {
+	&_txt {
     //@include set-border(bottom, 1px, solid, $color-divider);
-		.first {
+		&_first {
 			h3 {}
       p {}
 		}
-		.second {
+		&_second {
 			h3 {}
 		}
 	}
 }
-#vier {
-	.first {
-	  h3 {}
-	}
-	.second {
-	  h3 {}
-	}
+.op-special-b {
+  &_txt {
+  	&_first {
+  	  h3 {}
+  	}
+  	&_second {
+  	  h3 {}
+  	}
+  }
 }
 // special //
 
 /* block 4 ******/
-#favorite-topitem {
+.op-favorite-a {
+  &_txt {
 	@include set-background-image('img/demo.jpg');
-	.first {
-    h2 {}
+  	&_first {
+      h2 {}
+    }
   }
 }
 /* block 5 ******/
-#favorite-items {
-	#news {
-		.news-a {
+.op-favorite-b {
+	&_txt {
+		&_first {
 			h3 {}
 		}
-		.news-b {
+		&_second {
 			h3 {}
 		}
 	}
 
-	#projects {
-    .project-a, .project-b, .project-c {
+	&_prj {
+    &_a, &_b, &_c {
       height: 40vw;
       overflow: hidden;
       @include breakpoint($device-large) {
         height: 25vw;
       }
       @extend .center-v;
-      .projects-label {
+      &_lbl {
         @extend .center-h;
         text-align: center;
         b {
@@ -400,24 +427,24 @@ p, i {
         }
       }
     }
-		.project-a {
-			.projects-label {
+		&_a {
+			&_lbl {
 				@include btn-circular(27vw, 'img/demo.jpg', $color-image-border);  // width, image, color, alpha
         @include breakpoint($device-large) {
           @include btn-circular(20vw, 'img/demo.jpg', $color-image-border);  // width, image, color, alpha
         }
 			}
 		}
-		.project-b {
-			.projects-label {
+		&_b {
+			&_lbl {
 				@include btn-circular(27vw, 'img/demo.jpg', $color-image-border);  // width, image, color, alpha
         @include breakpoint($device-large) {
           @include btn-circular(20vw, 'img/demo.jpg', $color-image-border);  // width, image, color, alpha
         }
 			}
 		}
-		.project-c {
-			.projects-label {
+		&_c {
+			&_lbl {
 				@include btn-circular(27vw, 'img/demo.jpg', $color-image-border);  // width, image, color, alpha
         @include breakpoint($device-large) {
           @include btn-circular(20vw, 'img/demo.jpg', $color-image-border);  // width, image, color, alpha
@@ -427,88 +454,96 @@ p, i {
 	}
 }
 /* block 6 ******/
-#contact {
-  div {
+.op-contact {
+  &_item {
     position: relative;
-  }
-  label {
-    // hide label - we do not need to read it
-    display: none;
-  }
-  #form-legend {}
-  input, textarea {
-    width: 100%;
-    @include rem("padding", 10px 0 10px 50px);
-    background-color: $color-input-background;
-    color: $color-input-text;
-  	@include font($font-name-form, $font-weight-normal); // textarea wants it again
-    @include font-size($font-size-teaser, 26px);
-    @include set-border(all, 1px, solid, $color-input-border);
-    @extend .radius !optional;
+    &_inp {
+      width: 100%;
+      @include rem("padding", 10px 0 10px 50px);
+      background-color: $color-input-background;
+      color: $color-input-text;
+    	@include font($font-name-form, $font-weight-normal); // textarea wants it again
+      @include font-size($font-size-teaser, 26px);
+      @include set-border(all, 1px, solid, $color-input-border);
+      @extend .radius !optional;
 
-    &:focus {
-    	border-color: $color;
-    	color: $color;
+      // icons:
+      background-size: 30px 30px;
+    	background-position: 10px 14px;
+    	background-repeat: no-repeat;
+      background-clip: inherit;
+
+      &:focus {
+        border-color: $color;
+        color: $color;
+      }
+    }
+    #usrtxt {
+      @extend .icon-text;
+      $textarearows: $font-size-teaser * 2.2 + 20px; // fontsize * ~lineheight + padding
+      @include rem("height", $textarearows * 3);
+      @include breakpoint($device-large) {
+        @include rem("height", $textarearows * 4);
+      }
+    }
+    #email {
+      @extend .icon-email;
+    }
+    #firstname,
+    #lastname {
+      @extend .icon-user;
+    }
+    #website {
+      @extend .icon-web;
+    }
+    .error {
+      // submit (js)
+      border-color: $color-error;
+    }
+    .form-error {
+      position: absolute;
+      top: 1px; // - border
+      left: 11px;
+      @include set-background($color-error);
+      @include rem("padding", 10px 0 10px 10px);
+      width: calc(100% - 22px);
+      @include font-size($font-size-teaser, 26px);
+      text-align: right;
+      b {
+        @include rem("padding-right", 10px);
+      }
+    }
+    #form-submit {
+      @include rem("margin-top", 20px);
+      padding-left: 0;
+      @include set-background($color);
+      border: none;
+      cursor: pointer;
+      &.error {
+        @include set-background($color-error);
+      }
+      &.success {
+        @include set-background($color-success);
+      }
     }
 
-    // icons:
-    background-size: 30px 30px;
-  	background-position: 10px 14px;
-  	background-repeat: no-repeat;
-    background-clip: inherit;
   }
-  #form-text textarea {
-    @extend .icon-text;
-  }
-  #form-email input {
-    @extend .icon-email;
-  }
-  #form-firstname input,
-  #form-lastname input {
-    @extend .icon-user;
-  }
-  #form-web input {
-    @extend .icon-web;
-  }
-
-  .form-error {
-    position: absolute;
-    top: 1px; // - border
-    left: 11px;
-    @include set-background($color-error);
-    @include rem("padding", 10px 0 10px 10px);
-    width: calc(100% - 22px);
-    @include font-size($font-size-teaser, 26px);
-    text-align: right;
-    b {
-      //color: $color-white;
-      @include rem("padding-right", 10px);
-    }
-  }
-  #form-submit {
-    @include rem("margin-top", 20px);
-    padding-left: 0;
-    @include set-background($color);
-    border: none;
-    cursor: pointer;
-  }
-
 }
-footer {
+.op-foot {
 	@include set-background($color-footer-background);
   @include rem("padding", 10px);
   @include breakpoint($device-medium) {
     @include rem("padding", 20px 40px);
     text-align: center;
   }
-	p {
+	&_txt {
     color: $color-footer-text;
   }
 }
 
 /* menu ******/
-#navigation {
-	#navigation-btn {
+.op-nav {
+	&_btn {
 		display: block;
 		position:fixed;
     @include rem("bottom", -10px);
@@ -528,7 +563,7 @@ footer {
           @include set-background($color-menu-icon-background, 0.2);
       }
     }
-    #navigation-icon {
+    &_ico {
       // burger to close animation
       position: absolute;
       top: 5px;
@@ -594,7 +629,7 @@ footer {
       }
     }
 	}
-	#navigation-menu {
+	&_men {
 		z-index:2;
 		@extend .resetlist;
 		display: none; //block
@@ -613,7 +648,7 @@ footer {
       width: 30%;
       left: 35%;
     }
-		> li {
+		&_item {
 			@include set-border(bottom, 1px, solid, $color-divider, 0.5);
       @include font($font-name-menu, $font-weight-normal);
 
@@ -622,7 +657,7 @@ footer {
       @include breakpoint($device-medium) {
         @include font-size($font-size-teaser, 36px);
       }
-			a {
+			&_url {
         @include rem("padding", 3px 10px 5px 10px);
         color: $color-menu-link;
         width: 100%;

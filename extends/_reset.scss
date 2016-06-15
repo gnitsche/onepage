@@ -111,6 +111,10 @@ body {
 	 height: 100%;
 	 margin: 0;
 }
+label {
+	// hide label - we do not need to read it
+	display: none;
+}
 input, textarea {
 	-webkit-appearance:none; // safari
 	 border-radius: 0; // safari

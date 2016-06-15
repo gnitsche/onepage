@@ -6,107 +6,137 @@
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
 <meta name="viewport" content="user-scalable=0, initial-scale=1.0"/>
-<link href="style.css" rel="stylesheet">
+
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="index,follow"/>
+<link href="style.css" rel="stylesheet"/>
+
+<link rel="icon" sizes="192x192" href="theme/darkblue/icons/touch-icon-192x192.png"/><!-- Chrome on Android -->
+<link rel="icon" sizes="128x128" href="theme/darkblue/icons/touch-icon-128x128.png"/>
+<link rel="icon" sizes="96x96" href="theme/darkblue/icons/touch-icon-96x96.png"/><!-- Google TV -->
+<link rel="icon" sizes="48x48" href="theme/darkblue/icons/favicon-48x48.png"/>
+<link rel="icon" sizes="32x32" href="theme/darkblue/icons/favicon-32x32.png"/><!-- Safari on OS X, IE10 Metro -->
+<link rel="icon" sizes="16x16" href="theme/darkblue/icons/favicon-16x16.png"/>
+<!--[if IE]> <link rel="shortcut icon" href="favicon.ico"/> <![endif]-->
+
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="theme/darkblue/icons/apple-touch-icon-180x180-precomposed.png"/>
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="theme/darkblue/icons/apple-touch-icon-152x152-precomposed.png"/>
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="theme/darkblue/icons/apple-touch-icon-144x144-precomposed.png"/>
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="theme/darkblue/icons/apple-touch-icon-120x120-precomposed.png"/>
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="theme/darkblue/icons/apple-touch-icon-114x114-precomposed.png"/>
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="theme/darkblue/icons/apple-touch-icon-76x76-precomposed.png"/>
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="theme/darkblue/icons/apple-touch-icon-72x72-precomposed.png"/>
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="theme/darkblue/icons/apple-touch-icon-60x60-precomposed.png"/>
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="theme/darkblue/icons/apple-touch-icon-57x57-precomposed.png"/>
+<link rel="apple-touch-icon-precomposed" href="theme/darkblue/icons/apple-touch-icon-precomposed.png"/>
 </head>
 
 <body>
 <!-- block 1 -->
-<header id="header-welcome">
-  <div class="header-text"><h1>Welcome</h1></div>
+<header class="op-head" id="op-block-1">
+  <a href="#person" class="op-head_logo"><h1 class="op-head_logo_txt">Welcome</h1></a>
 </header>
 <!-- block 2 -->
-<div id="page">
-<section id="person" class="block">
-  <div class="person-image"><span><b>Image (grid 1/4)</b></span></div>
-  <div class="person-text"><h2>Headline (grid 3/4)</h2><p class="text-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p><p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. </p></div>
+<div class="op-page">
+<section class="op-pers" id="op-block-2">
+  <div class="op-pers_img"><span class="op-pers_img_item"><b class="op-pers_img_item_lbl">Image (grid 1/4)</b></span></div>
+  <div class="op-pers_txt"><h2 class="op-pers_txt_hl">Headline (grid 3/4)</h2><p class="op-pers_txt_intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p><p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. </p></div>
 </section>
 <!-- block 3 -->
 <!-- special -->
-<section id="drei" class="block">
-  <header>
-    <div class="header-bg"></div>
-    <h2>Block three (parallax image)</h2>
+<section class="op-special-a" id="op-block-3">
+  <header class="op-special-a_hdr">
+    <div class="op-special-a_hdr_img op-js-parallax"></div>
+    <h2 class="op-special-a_hdr_hl">Block three (parallax image)</h2>
   </header>
-  <section>
-    <div class="first"><h3>Headline (grid 1/2)</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.</p></div>
-    <div class="second"><h3>Headline (grid 2/2)</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.</p></div>
+  <section class="op-special-a_txt">
+    <div class="op-special-a_txt_first"><h3>Headline (grid 1/2)</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.</p></div>
+    <div class="op-special-a_txt_second"><h3>Headline (grid 2/2)</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.</p></div>
   </section>
 </section>
-<section id="vier">
-  <div class="first"><h3>This is a great Headline (grid 1/4)</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p></div>
-  <div class="second"><h3>Headline (grid 3/4)</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.</p></div>
+<section class="op-special-b op-special-b_txt">
+  <div class="op-special-b_txt_first"><h3>This is a great Headline (grid 1/4)</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p></div>
+  <div class="op-special-b_txt_second"><h3>Headline (grid 3/4)</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.</p></div>
 </section>
 <!-- special -->
 <!-- block 4 -->
-<section id="favorite-topitem" class="block">
-  <div class="first"><h2>Block four (grid 1/1)</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.</p></div>
+<section class="op-favorite-a op-favorite-a_txt" id="op-block-4">
+  <div class="op-favorite-a_txt_first"><h2>Block four (grid 1/1)</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.</p></div>
 </section>
 <!-- block 5 -->
-<section id="favorite-items" class="block">
-  <section id="news">
-    <article class="news-a"><h3>News (grid 1/2)</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p></article>
-    <div class="news-b"><h3>News (grid 2/2)</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p></div>
+<section class="op-favorite-b">
+  <section class="op-favorite-b_txt">
+    <article class="op-favorite-b_txt_first"><h3>News (grid 1/2)</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p></article>
+    <div class="op-favorite-b_txt_second"><h3>News (grid 2/2)</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p></div>
   </section>
-  <section id="projects">
-    <a href="" class="project-a"><span class="projects-label"><b>(grid 1/3)</b></span></a>
-    <a href="" class="project-b"><span class="projects-label"><b>(grid 2/3)</b></span></a>
-    <a href="" class="project-c"><span class="projects-label"><b>(grid 3/3)</b></span></a>
+  <section class="op-favorite-b_prj">
+    <a href="" class="op-favorite-b_prj_a"><span class="op-favorite-b_prj_a_lbl"><b>(grid 1/3)</b></span></a>
+    <a href="" class="op-favorite-b_prj_b"><span class="op-favorite-b_prj_b_lbl"><b>(grid 2/3)</b></span></a>
+    <a href="" class="op-favorite-b_prj_c"><span class="op-favorite-b_prj_c_lbl"><b>(grid 3/3)</b></span></a>
   </section>
 </section>
 <!-- block 6 -->
-<section id="contact" class="block">
-  <form action="" method="">
+<section class="op-contact" id="op-block-5">
+  <form  method="post" id="form" novalidate>
     <fieldset>
-      <legend id="form-legend"><h2>Contact</h2></legend>
-      <div id="form-firstname">
+      <legend class="op-contact_leg"><h2>Contact</h2></legend>
+      <div class="op-contact_item op-contact_item--firstname">
         <label><b>First name:</b></label>
-        <input type="text" name="firstname" maxlength="100" placeholder="first name" required>
+        <input type="text" name="firstname" id="firstname" class="op-contact_item_inp --jp-validate" maxlength="100" placeholder="first name" required>
       </div>
-      <div id="form-lastname">
+      <div class="op-contact_item op-contact_item--lastname">
         <label><b>Last name:</b></label>
-        <input type="text" name="lastname" maxlength="100" placeholder="last name" required>
+        <input type="text" name="lastname" id="lastname" class="op-contact_item_inp --jp-validate" maxlength="100" placeholder="last name" required>
       </div>
-      <div id="form-email">
+      <div class="op-contact_item op-contact_item--email">
         <label><b>eMail:</b></label>
-        <input type="email" name="email" maxlength="200" placeholder="eMail" required>
+        <input type="email" name="email" id="email" class="op-contact_item_inp --jp-validate" maxlength="200" placeholder="eMail" required>
       </div>
-      <div id="form-web">
+      <div class="op-contact_item op-contact_item--web">
         <label><b>Website:</b></label>
-        <input type="text" name="website" value="http://" maxlength="300" placeholder="website">
+        <input type="text" name="website" id="website" class="op-contact_item_inp" value="http://" maxlength="300" placeholder="website">
       </div>
-      <div id="form-text">
+      <div class="op-contact_item op-contact_item--text">
         <label><b>Text:</b></label>
-        <textarea rows="10" name="usrtxt" wrap="hard" maxlength="800" placeholder="your commit" required></textarea>
-        <input type="submit" value="Submit" maxlength="500" id="form-submit">
+        <textarea name="usrtxt" id="usrtxt" class="op-contact_item_inp --jp-validate" wrap="hard" maxlength="800" placeholder="your commit" required></textarea>
+        <input type="submit" value="Submit" maxlength="500" class="op-contact_item_inp" id="form-submit">
       </div>
     </fieldset>
   </form>
 </section>
 </div>
-<footer id="footer" class="block">
-  <p><b>Footer text</b><br/>Name | address | phone number | eMail | website<br/>
-    Infos: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+<footer class="op-foot">
+  <p class="op-foot_txt"><b>Footer text</b><br/>
+  Name | address | phone number | eMail | website<br/>
+  Infos: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
 </footer>
 
-<nav id="navigation">
-	<div id="navigation-btn"><div id="navigation-icon"></div></div>
-	<ul id="navigation-menu">
-    	<li><a href="#header-welcome">Welcome</a></li>
-        <li><a href="#person">About me</a></li>
-        <li><a href="#drei">Block three</a></li>
+<nav class="op-nav op-js-nav">
+	<div class="op-nav_btn op-js-nav_btn"><div class="op-nav_btn_ico op-js-nav_btn_ico"></div></div>
+	<ul class="op-nav_men op-js-nav_men">
+    	<li class="op-nav_men_item"><a href="#op-block-1" class="op-nav_men_item_url">Welcome</a></li>
+      <li class="op-nav_men_item"><a href="#op-block-2" class="op-nav_men_item_url">About me</a></li>
+      <li class="op-nav_men_item"><a href="#op-block-3" class="op-nav_men_item_url">Block three</a></li>
         <!--<li><a href="#favorite-topitem">Block four</a></li>-->
-        <li><a href="#favorite-items">News</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <li class="op-nav_men_item"><a href="#op-block-4" class="op-nav_men_item_url">News</a></li>
+      <li class="op-nav_men_item"><a href="#op-block-5" class="op-nav_men_item_url">Contact</a></li>
     </ul>
 </nav>
 
 <script src="js/jquery-2.2.3.min-pack.js"></script>
 <script>
+/* JAVASCRIPT ALERTS (change to your language) */
 /* form input error text */
-var errortext = "Please fill in correctly";
+var errortext = "Please fill out this field correctly";
+/* form button error text */
+var errorsendtext = "Please fill all fields correctly";
+/* form button response text */
+var responsetext = "Thank you"; // and automatic response user name
 </script>
 <script src="js/effects.js"></script>
 <script src="js/navigation.js"></script>
 <script src="js/form-validation.js"></script>
+<script src="js/form-send.js"></script>
 </body>
 </html>

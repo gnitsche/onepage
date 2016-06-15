@@ -1,0 +1,34 @@
+// ========================================================================
+//
+// ONEPAGE
+//
+// Copyright (c) 2016, Gregor Nitsche, All rights reserved.
+//
+// This file is subject to the terms and conditions defined in file
+// 'LICENSE.md', which is part of this source code package.
+//
+// ========================================================================
+
+// ========================================================================
+// effects / parallax
+// ========================================================================
+
+// only set the height
+// Example: @include parallax(300px);
+
+@mixin parallax($parallax-height) {
+    position: relative;
+    overflow: hidden;
+    height: $parallax-height;
+    &_img {
+      position: absolute;
+      top: $parallax-height / 4;
+      width: 100% !important;
+      height: $parallax-height * 2 !important;
+    }
+    &_hl {
+      position: absolute;
+      top: $parallax-height / 10;
+      left: 0;
+    }
+}
