@@ -13,6 +13,10 @@ The page is perfect for representing (including a form field, "about you" part, 
 
 :warning: __Status__: In development!
 
+![DEMO Page](http://www.digiboarder/demo/onepage/qrcode.png "DEMO Page")
+
+[Demo page with "dark" theme](http://www.digiboarder/demo/onepage "DEMO Page")
+
 
 ### My intention
 
