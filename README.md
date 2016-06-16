@@ -14,7 +14,6 @@ The page is perfect for representing (including a form field, "about you" part, 
 :warning: __Status__: In development!
 
 <img src="http://www.digiboarder.de/demo/onepage/qrcode.png" target="_blank" alt="demo page"/>
-![demo page](https://www.digiboarder.de/demo/onepage/qrcode.png "demo page")
 
 [Demo page with "dark" theme](http://www.digiboarder.de/demo/onepage "DEMO Page")
 
