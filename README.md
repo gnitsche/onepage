@@ -13,7 +13,7 @@ The page is perfect for representing (including a form field, "about you" part, 
 
 :warning: __Status__: In development!
 
-![DEMO Page](http://www.digiboarder/demo/onepage/qrcode.png "DEMO Page")
+<img src="http://www.digiboarder/demo/onepage/qrcode.png" target="_blank" alt="demo page"/>
 
 [Demo page with "dark" theme](http://www.digiboarder/demo/onepage "DEMO Page")
 
